@@ -1,0 +1,73 @@
+// VARIABLE
+$padding: 0px 40px;
+
+// STYLE
+html,
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  font-family: Text;
+}
+
+h1 {
+  font-family: 'Title';
+  font-size: 42px;
+  font-weight: 100;
+  margin: 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  @media screen and (min-width: $tablet) {
+    font-size: 62px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 120px;
+  }
+}
+
+h2 {
+  font-family: Text;
+  margin: 5px 0px;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 14px;
+  margin: 5px 0px;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.padding {
+  padding: 80px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: $padding;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.separator {
+  margin: 40px auto;
+  height: 1px;
+  background-color: $black;
+  width: 80%;
+  opacity: 0.2;
+
+  @media screen and (min-width: $laptop){
+    margin: 100px auto;
+  }
+}
