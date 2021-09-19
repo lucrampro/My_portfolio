@@ -1,5 +1,5 @@
 <template>
-  <div class="home padding">
+  <div class="home">
     <div class="container--imgs">
       <div :class="`wrapper--img img-${index}`" v-for="(item, index) in 3" :key="index">
         <NuxtLink :to="{path: `/${projects_info[project_number].title}`}">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="wrapper--infos">
-      <p>{{ projects_info[project_number].techno }}</p>
+      <p class="technos">{{ projects_info[project_number].techno }}</p>
       <!-- <h1>{{ projects_info[project_number].title }}</h1> -->
       <Title :title="projects_info[project_number].title" />
       <div class="wrapper--comandes">
@@ -68,6 +68,11 @@
             top: '200%',
             ease: "expo.inOut",
           }, 'start')
+          .to('.technos', {
+            opacity: 0,
+            duration: 0.5,
+
+          }, 'start')
           .add(() => this.animeTitleToTop(), 'start')
           .add(() => this.changeImg(value))
           .set([wrapper_img_center.querySelector('a img'), wrapper_img_right.querySelector('a img'), wrapper_img_left
@@ -84,18 +89,22 @@
             ease: "expo.inOut",
           })
           .add(() => this.animeTitleToBottom())
+          .to('.technos', {
+            duration: duration,
+            opacity: 1,
+            delay: 0.5
+          })
           .to([wrapper_img_left, wrapper_img_right], {
             scale: 0.8,
-          }, 'finish')
+          }, 'finish-=0.5')
           .to(wrapper_img_right, {
             rotate: '12deg',
             x: '-20%',
-          }, 'finish')
+          }, 'finish-=0.5')
           .to(wrapper_img_left, {
             rotate: '-12deg',
             x: '-80%'
-          }, 'finish')
-        // .add(() => this.animeTitleToBottom())
+          }, 'finish-=0.5')
       },
       animeTitleToTop() {
         const duration = 1;
@@ -139,7 +148,8 @@
 
 <style lang="scss">
   .home {
-    height: calc(100vh - 80px);
+    height: 100vh;
+    padding-bottom: 0px !important;
     display: flex;
     align-items: center;
     justify-content: center;
