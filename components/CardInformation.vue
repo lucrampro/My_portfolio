@@ -1,9 +1,10 @@
 <template>
   <div class="card--information">
-    <p class="title">{{$props.infos.name}}</p>
-    <div class="wrapper--list--information" v-for="(content, i) in infos.contents" :key="i">
-      <p class="subtitle">{{content.title}}</p>
-      <p class="content">{{content.content}}</p>
+    <div class="title" >{{infos.title}}</div>
+    <div class="wrapper--information" v-for="(info, i) in infos.content" :key="i" >
+      <p class="subtitle">{{info.title}}</p>
+      <p class="content">{{info.content}}</p>
+      <div class="separator"></div>
     </div>
   </div>
 </template>
@@ -19,32 +20,24 @@ export default {
 
 <style lang="scss">
   .card--information {
-    border: solid 2px $black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0px;
-    margin: 30px 0px;
-    @media screen and (min-width: $laptop) {
-      
-      padding: 50px 100px;
-      display: flex;
-      font-display: column;
-      justify-content: center;
-      width: 100%;
-      max-width: 30%;
-    }
+    color: #ffffff;
     .title {
-      text-transform: uppercase;
-      font-weight: bold;
+      color: $red;
+      margin-bottom: 40px;
     }
+    .wrapper--information {
+      margin-bottom: 40px;
 
-    .wrapper--list--information {
-      p {
-        text-align: center;
-      }
+
       .subtitle {
-        text-decoration: underline;
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      .separator {
+        height: 1px;
+        background: #fff;
+        margin-top: 40px;
       }
     }
   }

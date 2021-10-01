@@ -23,17 +23,21 @@
         <img :src="require(`~/assets/imgs/projets/${projet.project_img.first}`)" alt="">
       </div>
 
-      <div class="wrapper--second--third--img" >
-        <div class="wrapper--img" v-intersect="onIntersect"><img :src="require(`~/assets/imgs/projets/${projet.project_img.second}`)" alt="">
+      <div class="wrapper--second--third--img">
+        <div class="wrapper--img" v-intersect="onIntersect"><img
+            :src="require(`~/assets/imgs/projets/${projet.project_img.second}`)" alt="">
         </div>
-        <div class="wrapper--img" v-intersect="onIntersect"><img :src="require(`~/assets/imgs/projets/${projet.project_img.third}`)" alt=""></div>
+        <div class="wrapper--img" v-intersect="onIntersect"><img
+            :src="require(`~/assets/imgs/projets/${projet.project_img.third}`)" alt=""></div>
       </div>
 
       <div class="wrapper--four--img">
-        <div class="wrapper--img" v-intersect="onIntersect"><img :src="require(`~/assets/imgs/projets/${projet.project_img.four}`)" alt=""></div>
+        <div class="wrapper--img" v-intersect="onIntersect"><img
+            :src="require(`~/assets/imgs/projets/${projet.project_img.four}`)" alt=""></div>
       </div>
       <div v-if="projet.project_img.five" class="wrapper--five--img">
-        <div class="wrapper--img" v-intersect="onIntersect"><img :src="require(`~/assets/imgs/projets/${projet.project_img.five}`)" alt=""></div>
+        <div class="wrapper--img" v-intersect="onIntersect"><img
+            :src="require(`~/assets/imgs/projets/${projet.project_img.five}`)" alt=""></div>
       </div>
     </div>
     <!-- CONTENT PROJECT  -->
@@ -165,6 +169,7 @@
       .wrapper--img {
         opacity: 0;
         transform: translateX(-40px);
+
         img {
           width: 100%;
         }
@@ -262,6 +267,18 @@
       }
 
 
+    }
+
+    .separator {
+      margin: 40px auto;
+      height: 1px;
+      background-color: $black;
+      width: 80%;
+      opacity: 0.2;
+
+      @media screen and (min-width: $laptop) {
+        margin: 100px auto;
+      }
     }
   }
 </style>

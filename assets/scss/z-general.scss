@@ -1,5 +1,4 @@
-// VARIABLE
-$padding: 0px 40px;
+
 
 // STYLE
 html,
@@ -15,6 +14,9 @@ body {
   overflow-x: hidden;
 }
 
+.text--bold {
+  font-family: 'Text--bold';
+}
 .bg--noise {
   position: fixed;
   top: -50%;
@@ -28,6 +30,7 @@ body {
   animation: bg-animation .2s infinite;
   opacity: .9;
   visibility: visible;
+  pointer-events: none;
 }
 
 @keyframes bg-animation {
@@ -70,10 +73,8 @@ h2 {
 }
 
 p {
-  font-size: 14px;
-  margin: 5px 0px;
-  letter-spacing: 1px;
-  line-height: 20px;
+  font-size: 20px;
+  margin: 15px 0px;
 }
 
 a {
@@ -84,21 +85,9 @@ a {
 .padding {
   padding: 80px 20px;
 
-  @media screen and (min-width: $tablet) {
-    padding: $padding;
+  @media screen and (min-width: $laptop) {
+    padding: 15vw;
     padding-top: 80px;
     padding-bottom: 80px;
-  }
-}
-
-.separator {
-  margin: 40px auto;
-  height: 1px;
-  background-color: $black;
-  width: 80%;
-  opacity: 0.2;
-
-  @media screen and (min-width: $laptop){
-    margin: 100px auto;
   }
 }

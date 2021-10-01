@@ -4,7 +4,7 @@
           <router-link to="/">
             <img :src="require(`~/assets/imgs/logo.png`)" alt="">
           </router-link>
-      
+
     </div>
     <div class="wrapper--links">
       <router-link v-for="(link, i) in links" :key="i" :to="link.path" >{{ link.name }}</router-link>
@@ -38,7 +38,6 @@ export default {
 
 <style lang="scss">
 .header {
-  padding: $padding;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,7 +46,7 @@ export default {
   position: absolute;
   box-sizing: border-box;
   z-index: 99;
-
+  padding: 0px 40px;
   .wrapper--links {
     display: flex;
     a {
