@@ -24,6 +24,8 @@ export default {
     .title {
       color: $red;
       margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .wrapper--information {
       margin-bottom: 40px;

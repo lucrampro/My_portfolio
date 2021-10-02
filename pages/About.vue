@@ -12,9 +12,9 @@
     </div>
 
     <div class="wrapper--story">
-      <CardInformation v-for="(info, i) in story" :key="i" :infos="info" />
+      <CardInformation v-for="(info, i) in story" :key="i" :infos="info" v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }" />
     </div>
-    <div class="wrapper--informations ">
+    <div class="wrapper--informations" v-intersect="{ callback: onIntersect,options: {threshold: 0.4} }">
       <div class="skilss">
         <p class="title ">{{infos.skils.title}}</p>
         <ul>
@@ -31,22 +31,31 @@
     </div>
 
     <!-- YOUTUBE INFOS HERE  -->
+    <div class="wrapper--youtube" v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }">
 
-    <!-- YOUTUBE INFOS HERE  -->
-    <!-- <div class="wrapper--contact">
-      <h1>envie de collaborer avec moi ? n’hesitez pas a me contacter</h1>
-      <p>Je me ferrai un plaisir d’échanger avec vous pour comprendre et répondre au mieux à vos besoins. Mon expérience
-        passée en agence alliée à mes compétences techniques me permettront de réaliser votrer site de demain.</p>
-
-      <a href="mailto:toto@toto.com"> Contacte moi </a>
+      <Title title="Youtube" />
+      <p>Je tiens sur mon temps personmnelles une chaine youtube <br>
+        <a target="blank" href="https://www.youtube.com/channel/UCSSPbD8TwQEzQWei4EVGCgA" class="text--bold">CODE AVEC LECHAT</a> ou je publies des tutoriels, conseils et avis sur le theme du
+        developpement web.</p>
     </div>
-    <p class="design-by">Design by Bastien Guimelli</p> -->
+    <!-- YOUTUBE INFOS HERE  -->
+    <div class="wrapper--contact" v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }">
+
+
+      <a href="mailto:toto@toto.com">
+        <!-- <h1>envie de collaborer avec moi ? n’hesitez pas a me contacter</h1> -->
+        <Words class="wrapper--words" Text="envie de collaborer avec moi ? n’hesitez pas a me contacter"/>
+      </a>
+    </div>
+    <p class="design-by" v-intersect="onIntersect">Design by Bastien Guimelli</p>
 
     <!-- END  -->
   </div>
 </template>
 
 <script>
+  import gsap from 'gsap'
+
   export default {
     name: 'About',
     data() {
@@ -95,6 +104,85 @@
           }
         }
       }
+    },
+    methods: {
+      onIntersect(observer) {
+        this.isVisible = observer.isIntersecting
+        const target = observer.entries[0].target;
+
+        if (this.isVisible) {
+
+          switch (target.className) {
+            case 'card--information':
+              gsap.timeline().to(target.querySelectorAll('.title, .subtitle, .content, .separator'), {
+                stagger: 0.08,
+                duration: 1.2,
+                x: '0px',
+                opacity: 1,
+                ease: "expo.out",
+              })
+              break;
+            case 'wrapper--informations':
+              gsap.timeline().to(target.querySelectorAll('.skilss .title, .skilss li'), {
+                  stagger: 0.05,
+                  duration: 1.2,
+                  x: '0px',
+                  opacity: 1,
+                  ease: "expo.out",
+                }, 'start')
+                .to(target.querySelectorAll('.awards .title, .awards p'), {
+                  stagger: 0.08,
+                  duration: 1.2,
+                  x: '0px',
+                  opacity: 1,
+                  ease: "expo.out",
+                }, 'start+=0.2')
+              break
+
+            case 'wrapper--youtube':
+              gsap.timeline().to(target.querySelectorAll('.title--composant span'), {
+                  stagger: 0.05,
+                  duration: 1.2,
+                  y: '0px',
+                  opacity: 1,
+                  ease: "expo.out",
+                }, 'start')
+                .to(target.querySelector('p'), {
+                  duration: 1.2,
+                  x: '0px',
+                  opacity: 1,
+                  ease: "expo.out",
+                }, 'start+=0.225')
+
+              break
+            case 'wrapper--contact':
+                gsap.timeline().to(target.querySelectorAll('a h1 span'), {
+                  stagger: 0.05,
+                  duration: 1.2,
+                  y: '0px',
+                  opacity: 1,
+                  ease: "expo.out",
+                }, 'start')
+
+              break
+            case 'design-by':
+              gsap.to(target, {
+                  duration: 1.2,
+                  y: '0px',
+                  opacity: 1,
+                  ease: "expo.out",
+              })
+              break
+            default:
+              break;
+          }
+
+
+
+
+
+        }
+      }
     }
   }
 </script>
@@ -126,6 +214,7 @@
       .presentation--pitch {
         text-align: justify;
         font-weight: bold;
+
         @media screen and (min-width: $laptop) {
           text-align: left;
         }
@@ -143,6 +232,15 @@
       }
 
       .card--information {
+
+        .title,
+        .subtitle,
+        .content,
+        .separator {
+          transform: translateX(-40px);
+          opacity: 0;
+        }
+
         @media screen and (min-width: $tablet) {
           max-width: 800px;
           margin: auto;
@@ -153,6 +251,13 @@
     .wrapper--informations {
       padding: 20px;
       text-transform: uppercase;
+
+      .title,
+      li,
+      p {
+        transform: translateX(-40px);
+        opacity: 0;
+      }
 
       @media screen and (min-width: $tablet) {
         max-width: 800px;
@@ -198,11 +303,23 @@
     }
 
     .wrapper--contact {
+      @media screen and (min-width: $tablet) {
+        max-width: 800px;
+        margin: auto;
+      }
+
       h1 {
         text-align: center;
 
         @media screen and (min-width: $laptop) {
           margin: 30px 0px;
+          text-align: left;
+        }
+        span {
+          opacity: 0;
+          transform: translateY(40px);
+          display: inline-block;
+          margin-right: 20px;
         }
       }
 
@@ -215,19 +332,37 @@
       }
 
       a {
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: bold;
-        display: block;
-        margin: 10px 0px;
+        text-align: left;
 
       }
+    }
+
+    .wrapper--youtube {
+      .title--composant {
+        span {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+      }
+
+      p {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      @media screen and (min-width: $tablet) {
+        max-width: 800px;
+        margin: auto;
+      }
+
     }
 
     .design-by {
       font-weight: bold;
       text-align: center;
       text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(40px);
     }
   }
 </style>
