@@ -47,6 +47,7 @@ export default {
   box-sizing: border-box;
   z-index: 99;
   padding: 0px 40px;
+  opacity: 0;
   .wrapper--links {
     display: flex;
     a {

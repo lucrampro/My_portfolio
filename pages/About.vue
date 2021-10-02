@@ -1,8 +1,8 @@
 <template>
   <div class="about">
     <div class="wrapper--presentation">
-      <h1>Creative</h1>
-      <h1>Developpeur</h1>
+      <Title title="Creative" />
+      <Title title="Developpeur" />
       <div class="wrapper--img">
         <img :src="require(`~/assets/imgs/about/me.jpg`)" alt="" srcset="">
       </div>
@@ -12,7 +12,8 @@
     </div>
 
     <div class="wrapper--story">
-      <CardInformation v-for="(info, i) in story" :key="i" :infos="info" v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }" />
+      <CardInformation v-for="(info, i) in story" :key="i" :infos="info"
+        v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }" />
     </div>
     <div class="wrapper--informations" v-intersect="{ callback: onIntersect,options: {threshold: 0.4} }">
       <div class="skilss">
@@ -35,7 +36,8 @@
 
       <Title title="Youtube" />
       <p>Je tiens sur mon temps personmnelles une chaine youtube <br>
-        <a target="blank" href="https://www.youtube.com/channel/UCSSPbD8TwQEzQWei4EVGCgA" class="text--bold">CODE AVEC LECHAT</a> ou je publies des tutoriels, conseils et avis sur le theme du
+        <a target="blank" href="https://www.youtube.com/channel/UCSSPbD8TwQEzQWei4EVGCgA" class="text--bold">CODE AVEC
+          LECHAT</a> ou je publies des tutoriels, conseils et avis sur le theme du
         developpement web.</p>
     </div>
     <!-- YOUTUBE INFOS HERE  -->
@@ -44,7 +46,7 @@
 
       <a href="mailto:toto@toto.com">
         <!-- <h1>envie de collaborer avec moi ? n’hesitez pas a me contacter</h1> -->
-        <Words class="wrapper--words" Text="envie de collaborer avec moi ? n’hesitez pas a me contacter"/>
+        <Words class="wrapper--words" Text="envie de collaborer avec moi ? n’hesitez pas a me contacter" />
       </a>
     </div>
     <p class="design-by" v-intersect="onIntersect">Design by Bastien Guimelli</p>
@@ -105,6 +107,27 @@
         }
       }
     },
+    mounted() {
+      setTimeout(() => {
+        gsap.timeline().set('.wrapper--presentation h1 span', {
+            skewX: '60deg',
+            skewY: '60deg'
+          })
+          .to('.wrapper--presentation h1 span', {
+            y: 0,
+            skewY: '0deg',
+            skewX: '0deg',
+          })
+          .to('.wrapper--presentation .wrapper--img, .wrapper--presentation p', {
+            stagger: 0.2,
+            opacity: 1,
+            x: '0px',
+          })
+          .to('.header', {
+            opacity: 1,
+          })
+      }, 100)
+    },
     methods: {
       onIntersect(observer) {
         this.isVisible = observer.isIntersecting
@@ -156,21 +179,21 @@
 
               break
             case 'wrapper--contact':
-                gsap.timeline().to(target.querySelectorAll('a h1 span'), {
-                  stagger: 0.05,
-                  duration: 1.2,
-                  y: '0px',
-                  opacity: 1,
-                  ease: "expo.out",
-                }, 'start')
+              gsap.timeline().to(target.querySelectorAll('a h1 span'), {
+                stagger: 0.05,
+                duration: 1.2,
+                y: '0px',
+                opacity: 1,
+                ease: "expo.out",
+              }, 'start')
 
               break
             case 'design-by':
               gsap.to(target, {
-                  duration: 1.2,
-                  y: '0px',
-                  opacity: 1,
-                  ease: "expo.out",
+                duration: 1.2,
+                y: '0px',
+                opacity: 1,
+                ease: "expo.out",
               })
               break
             default:
@@ -182,6 +205,15 @@
 
 
         }
+      }
+    },
+    transition: {
+      css: false,
+      leave(el, done) {
+        gsap.timeline().to('.about', {
+            opacity: 0,
+          })
+          .add(() => done())
       }
     }
   }
@@ -197,13 +229,25 @@
         margin: auto;
       }
 
+      p {
+        transform: translateX(-40px);
+        opacity: 0;
+      }
+
       p,
       h1 {
         text-align: center;
+
+        span {
+          letter-spacing: -2px;
+          transform: translateY(200%);
+        }
       }
 
 
       .wrapper--img {
+        transform: translateX(-40px);
+        opacity: 0;
 
         img {
           width: 100%;
@@ -315,6 +359,7 @@
           margin: 30px 0px;
           text-align: left;
         }
+
         span {
           opacity: 0;
           transform: translateY(40px);

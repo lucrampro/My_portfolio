@@ -36,6 +36,52 @@
         project_number: 0,
       }
     },
+    mounted() {
+      const wrapper_img_left = '.wrapper--img.img-0';
+      const wrapper_img_right = '.wrapper--img.img-1';
+      const wrapper_img_center = '.wrapper--img.img-2';
+
+      setTimeout(() => {
+        gsap.timeline()
+          .set('.home .title--composant span', {
+            skewX: '60deg',
+            skewY: '60deg'
+          })
+          .to([wrapper_img_left, wrapper_img_right, wrapper_img_center], {
+            duration: 0.5,
+            scale: 1,
+            opacity: 1,
+          }, 'start')
+          .to(wrapper_img_left, {
+            duration: 0.25,
+            scale: 0.8,
+            x: '-20%',
+          }, 'start+=0.25')
+          .to(wrapper_img_right, {
+            duration: 0.25,
+            scale: 0.8,
+            x: '20%',
+          }, 'start+=0.25')
+        .to('.home h1 span', {
+          duration: 1,
+          stagger: 0.001,
+          skewX: 0,
+          skewY: 0,
+          y: 0,
+          ease: "expo.out",
+        }, 'start')
+        .to('.home .technos', {
+          opacity: 1,
+          y: '0px'
+        }, 'start+=0.2')
+        .to('.wrapper--comandes, .wrapper--comandes--desktop', {
+          opacity: 1
+        })
+        .to('.header', {
+          opacity: 1,
+        })
+      }, 100);
+    },
     methods: {
       changeImg(value) {
 
@@ -98,11 +144,9 @@
             scale: 0.8,
           }, 'finish-=0.5')
           .to(wrapper_img_right, {
-            rotate: '12deg',
             x: '-20%',
           }, 'finish-=0.5')
           .to(wrapper_img_left, {
-            rotate: '-12deg',
             x: '-80%'
           }, 'finish-=0.5')
       },
@@ -133,16 +177,7 @@
             ease: "expo.inOut",
           })
       },
-      test() {
-        const duration = 1
-        gsap.timeline().to('.title--composant .new_letter', {
-          duration: duration,
-          stagger: 0.02,
-          y: '0%',
-          ease: "expo.inOut",
-        })
-      }
-    }
+    },
   }
 </script>
 
@@ -156,11 +191,8 @@
     flex-direction: column;
     position: relative;
 
-
-
     @media screen and (min-width: $laptop) {
       flex-direction: column-reverse;
-
     }
 
     .container--imgs {
@@ -179,8 +211,9 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        max-width: 830px;
+        max-width: 1230px;
         display: none;
+        opacity: 0;
 
         @media screen and (min-width: $laptop) {
           display: flex;
@@ -199,48 +232,37 @@
         height: 240px;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0;
         overflow: hidden;
 
         @media screen and (min-width: $tablet) {
-          width: 440px;
+          width: 540px;
           height: 480px;
         }
 
         @media screen and (min-width: $laptop) {
-          width: 330px;
+          width: 630px;
           height: 360px;
         }
 
         &.img-0 {
-          transform: translate(-80%, -50%) rotate(-12deg) scale(0.8);
+          // transform: translate(-80%, -50%) scale(0.7);
           opacity: 0.6;
-
-          @media screen and (min-width: $laptop) {
-            transform: translate(-95%, -50%) rotate(-12deg) scale(0.8);
-          }
         }
 
         &.img-1 {
-          transform: translate(-20%, -50%) rotate(12deg) scale(0.8);
+          // transform: translate(-20%, -50%) scale(0.7);
           opacity: 0.6;
-
-          @media screen and (min-width: $laptop) {
-            transform: translate(-5%, -50%) rotate(12deg) scale(0.8);
-          }
         }
 
         img {
-          // width: 400px;
-          height: 240px;
+          width: 100%;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
 
-          @media screen and (min-width: $tablet) {
-            height: 440px;
-          }
         }
       }
     }
@@ -251,6 +273,10 @@
         text-transform: uppercase;
         text-align: center;
 
+        span {
+          transform: translateY(200%);
+        }
+
         @media screen and (min-width: $laptop) {
           letter-spacing: 5px;
         }
@@ -258,6 +284,8 @@
 
       p {
         text-align: center;
+        transform: translateY(-40px);
+        opacity: 0;
 
         @media screen and (min-width: $laptop) {
           font-size: 24px;
@@ -272,6 +300,7 @@
       align-items: center;
       justify-content: space-between;
       margin-top: 20px;
+      opacity: 0;
 
       @media screen and (min-width: $laptop) {
         display: none;

@@ -1,10 +1,10 @@
 <template>
-  <div class="projet ">
+  <div class="projet">
     <!-- PRESENTATION PROJECT  -->
     <div class="wrapper--presentation">
 
-      <h1>{{projet.title}}</h1>
-      <p>{{projet.description}}</p>
+      <Title :title="projet.title" />
+      <p class="description">{{projet.description}}</p>
       <div class="wrapper--img">
         <img class="poster" :src="require(`~/assets/imgs/projets/${projet.poster}`)" alt="">
       </div>
@@ -67,9 +67,8 @@
 
 <script>
   import Projets from '../projets.json';
-  import LocomotiveScroll from 'locomotive-scroll';
+  // import LocomotiveScroll from 'locomotive-scroll';
   import gsap from 'gsap';
-
   export default {
     name: 'Projet',
     data() {
@@ -77,16 +76,42 @@
         projects_info: Projets,
         projet: {},
         number_projet: 0,
+        mounted_component: true,
       }
     },
     created() {
       this.getProjet();
     },
     mounted() {
-      // const scroll = new LocomotiveScroll({
-      //   el: document.querySelector('body'),
-      //   smooth: true
-      // });
+      setTimeout(() => {
+        gsap.timeline().set('.projet .wrapper--presentation .title--composant span', {
+            skewX: '60deg',
+            skewY: '60deg'
+          })
+          .to('.projet .wrapper--presentation .title--composant span', {
+            duration: 1,
+            stagger: 0.01,
+            y: '0%',
+            skewX: '0deg',
+            skewY: '0deg',
+            ease: "expo.inOut",
+          }, 'start')
+          .to('.wrapper--presentation .description', {
+            y: '0px',
+            opacity: 1
+          }, 'start+=0.6')
+          .to('.wrapper--presentation .wrapper--img', {
+            x: '0px',
+            opacity: 1
+          }, 'start+=0.6')
+          .to('.wrapper--presentation h2, .wrapper--presentation p', {
+            y: '0px',
+            opacity: 1
+          }, 'start+=0.6')
+          .to('.header', {
+            opacity: 1,
+          })
+      }, 100);
     },
     methods: {
       getProjet() {
@@ -124,6 +149,15 @@
           })
         }
       }
+    },
+    transition: {
+      css: false,
+      leave(el, done) {
+        gsap.timeline().to('.projet', {
+            opacity: 0,
+          })
+          .add(() => done())
+      }
     }
   }
 </script>
@@ -137,9 +171,17 @@
       h1 {
         text-align: center;
         margin-bottom: 20px;
+
+        span {
+
+          transform: translateY(200%);
+        }
+
       }
 
       .wrapper--img {
+        opacity: 0;
+        transform: translateX(-50px);
         width: 60%;
         margin: 0px auto;
 
@@ -156,6 +198,8 @@
       p,
       h2 {
         text-align: center;
+        opacity: 0;
+        transform: translateY(-40px);
 
         @media screen and (min-width: $laptop) {
           max-width: 500px;

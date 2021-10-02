@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title--composant"> <span :class="new_letter ? 'new_letter' : ''" v-for="(letter, i) in letters" :key="i"> {{letter}} </span> </h1>
+  <h1 class="title--composant"> <span :class="new_letter ? 'letters new_letter' : 'letters'" v-for="(letter, i) in letters" :key="i"> {{letter}} </span> </h1>
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
       default: 'Default'
     }
   },
-  watch :{ 
+  watch :{
     title (new_value, old_value) {
       this.CutTitle()
       this.new_letter = true;
