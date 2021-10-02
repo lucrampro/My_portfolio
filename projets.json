@@ -1,7 +1,7 @@
 [{
     "poster": "hellomojito/poster.png",
     "title": "hellomojito",
-    "techno": "Vue.js, GSAP",
+    "techno": "Vue.js, VueX, GSAP",
     "description": "Hellomojito est le portfolio principal de l'agence. L'entreprise divise ses activités en 3 parties ete site a été conçu pour présenter les sites les plus créatifs réalisés pour des clients.",
     "participation": "Je suis arrivé dans l'agence en cours de projet, on m’a demandé d'integrer des pages ainsi qu'animer les micro interactions et les transition entre pages.",
     "project_img": {
@@ -10,6 +10,34 @@
       "third": "hellomojito/third.png",
       "four": "hellomojito/four.png",
       "five": "hellomojito/five.png"
+    }
+  },
+  {
+    "poster": "signature/poster.png",
+    "title": "signature",
+    "techno": "Nuxt.js, GSAP",
+    "description": "Hellomojito est le portfolio principal de l'agence. L'entreprise divise ses activités en 3 parties ete site a été conçu pour présenter les sites les plus créatifs réalisés pour des clients.",
+    "participation": "Je suis arrivé dans l'agence en cours de projet, on m’a demandé d'integrer des pages ainsi qu'animer les micro interactions et les transition entre pages.",
+    "project_img": {
+      "first": "signature/first.png",
+      "second": "signature/second.png",
+      "third": "signature/third.png",
+      "four": "signature/four.png",
+      "five": "signature/five.png"
+    }
+  },
+  {
+    "poster": "mixologue/poster.png",
+    "title": "mixologue",
+    "techno": "Vue.js, GSAP, VueX",
+    "description": "Hellomojito est le portfolio principal de l'agence. L'entreprise divise ses activités en 3 parties ete site a été conçu pour présenter les sites les plus créatifs réalisés pour des clients.",
+    "participation": "Je suis arrivé dans l'agence en cours de projet, on m’a demandé d'integrer des pages ainsi qu'animer les micro interactions et les transition entre pages.",
+    "project_img": {
+      "first": "mixologue/first.png",
+      "second": "mixologue/second.png",
+      "third": "mixologue/third.png",
+      "four": "mixologue/four.png",
+      "five": "mixologue/five.png"
     }
   },
   {
@@ -37,7 +65,7 @@
       "second": "itq/second.png",
       "third": "itq/third.png",
       "four": "itq/four.png"
-      
+
     }
   },
   {
@@ -51,7 +79,7 @@
       "second": "xls/second.png",
       "third": "xls/third.png",
       "four": "xls/four.png"
-      
+
     }
   }
 ]
