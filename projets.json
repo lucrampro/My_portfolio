@@ -16,8 +16,8 @@
     "poster": "signature/poster.png",
     "title": "signature",
     "techno": "Nuxt.js, GSAP",
-    "description": "Hellomojito est le portfolio principal de l'agence. L'entreprise divise ses activités en 3 parties ete site a été conçu pour présenter les sites les plus créatifs réalisés pour des clients.",
-    "participation": "Je suis arrivé dans l'agence en cours de projet, on m’a demandé d'integrer des pages ainsi qu'animer les micro interactions et les transition entre pages.",
+    "description": "Signature est un site de presentation de produits qui vise a mettre en avant les prestation \"print\" de l'agence hellomojito",
+    "participation": "J'ai developper se projet en autonomie dans le cadre de monste de developpeur au sein de l'agence hellomojito.",
     "project_img": {
       "first": "signature/first.png",
       "second": "signature/second.png",
@@ -30,8 +30,8 @@
     "poster": "mixologue/poster.png",
     "title": "mixologue",
     "techno": "Vue.js, GSAP, VueX",
-    "description": "Hellomojito est le portfolio principal de l'agence. L'entreprise divise ses activités en 3 parties ete site a été conçu pour présenter les sites les plus créatifs réalisés pour des clients.",
-    "participation": "Je suis arrivé dans l'agence en cours de projet, on m’a demandé d'integrer des pages ainsi qu'animer les micro interactions et les transition entre pages.",
+    "description": "Le Mixologue est un vendeur de e-liquid pour cigarettes electronique.",
+    "participation": "Sur ce projet j'ai eu a upgrade les fonctionnaliter deja en place et autres maintenance corrective.",
     "project_img": {
       "first": "mixologue/first.png",
       "second": "mixologue/second.png",
@@ -58,7 +58,7 @@
     "poster": "itq/poster.png",
     "title": "itq",
     "techno": "Wordpress",
-    "description": "ITQ Security, acteur majeur de la sécurité électronique, Spécialisé dans les technologies de sécurité électronique détection intrusion, vidéo surveillance, contrôle d’accès, détection incendie… TQ Security a su démontrer son professionnalisme et sa capacité à conduire des opérations complexes de conception, d’installation, de rénovation ou d’extension d’équipements de sécurité. Il s’agit notamment d’accompagner les entreprises privées et publiques vers la transition numérique dans le monde de la sécurité et de la sureté électronique. ITQ Security, c’est également aujourd’hui une fantastique capacité de réalisation d’installations utilisant toutes les technologies disponibles en partenariat avec les plus grands constructeurs du marché. Nos équipes accompagnent sans relâche nos clients de la pré-étude à la mise en œuvre et à la maintenance des solutions qui leur sont personnellement adaptées. Nos références l’attestent amplement.",
+    "description": "ITQ Security est un acteur majeur de la sécurité électronique, Spécialisé dans les technologies de sécurité électronique détection intrusion, vidéo surveillance, contrôle d’accès, détection incendie….",
     "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai participer au developpement du site ITQ via le CMS Wordpress",
     "project_img": {
       "first": "itq/first.png",
@@ -72,7 +72,7 @@
     "poster": "xls/poster.png",
     "title": "xls",
     "techno": "Javascript",
-    "description": "Expert de la sécurité antivol, Spécialisée dans la surveillance électronique des articles en magasin, la société XL Security a conçu et réalisé une large gamme de solutions permettant de répondre à l’ensemble de vos attentes dans ce domaine. Notre expérience de plus de 20 ans, la fiabilité de nos produits et la qualité de nos services vous garantissent le meilleur choix au meilleur prix.",
+    "description": "Expert de la sécurité antivol, Spécialisée dans la surveillance électronique des articles en magasin, la société XL Security a conçu et réalisé une large gamme de solutions.",
     "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai participer au developpement du site XLS les missions qui mon etait confier sur ce site etait d'animer la page d'acceuil fromscratch et d'integrer les elements des pages via le CMS wordpress",
     "project_img": {
       "first": "xls/first.png",
