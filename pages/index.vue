@@ -23,7 +23,7 @@
 
         gsap.timeline().to([wrapper_img_left, wrapper_img_right], {
             duration: duration,
-            x: '-50%',
+            x: '0%',
             rotate: '0deg',
             scale: 1,
             ease: "expo.inOut",

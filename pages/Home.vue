@@ -101,14 +101,12 @@
 
         gsap.timeline().to([wrapper_img_left, wrapper_img_right], {
             duration: duration,
-            x: '-50%',
+            x: '0%',
             rotate: '0deg',
             scale: 1,
             ease: "expo.inOut",
           })
-          .to([wrapper_img_center.querySelector('a img'), wrapper_img_right.querySelector('a img'), wrapper_img_left
-            .querySelector('a img')
-          ], {
+          .to([wrapper_img_center.querySelector('a img'), wrapper_img_right.querySelector('a img'), wrapper_img_left.querySelector('a img')], {
             duration: duration,
             stagger: 0.05,
             top: '200%',
@@ -147,7 +145,7 @@
             x: '-20%',
           }, 'finish-=0.5')
           .to(wrapper_img_left, {
-            x: '-80%'
+            x: '20%'
           }, 'finish-=0.5')
       },
       animeTitleToTop() {
