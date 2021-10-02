@@ -131,7 +131,7 @@
             stagger: 0.05,
             top: '50%',
             ease: "expo.inOut",
-          })
+          },'second')
           .add(() => this.animeTitleToBottom())
           .to('.technos', {
             duration: duration,
@@ -140,13 +140,13 @@
           })
           .to([wrapper_img_left, wrapper_img_right], {
             scale: 0.8,
-          }, 'finish-=0.5')
+          }, 'second+=1')
           .to(wrapper_img_right, {
             x: '-20%',
-          }, 'finish-=0.5')
+          }, 'second+=1')
           .to(wrapper_img_left, {
             x: '20%'
-          }, 'finish-=0.5')
+          }, 'second+=1')
       },
       animeTitleToTop() {
         const duration = 1;
@@ -160,7 +160,7 @@
         })
       },
       animeTitleToBottom() {
-        const duration = 1
+        const duration = 0.8
         gsap.timeline()
           .set('.title--composant span', {
             skewX: '60deg',
