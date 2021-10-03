@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <Home />
-  </div>
+  <client-only>
+    <div id="app">
+      <Home />
+    </div>
+  </client-only>
 </template>
 
 <script>
@@ -44,6 +46,11 @@
           .to('.wrapper--comandes--desktop, .wrapper--comandes', {
             opacity: 0,
             duration: 0.2
+          }, 'start')
+          .to('.numbers--projects', {
+            duration: 0.5,
+            opacity: 0,
+            y: '10px'
           }, 'start')
           .to('.title--composant span', {
             duration: duration,

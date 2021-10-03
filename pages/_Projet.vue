@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <div class="projet">
     <!-- PRESENTATION PROJECT  -->
     <div class="wrapper--presentation">
@@ -63,6 +64,7 @@
     <!-- NEXT OR PREVIOUS PROJECT  -->
 
   </div>
+  </client-only>
 </template>
 
 <script>

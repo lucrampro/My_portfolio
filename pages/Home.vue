@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <p class="numbers--projects"><span>{{project_number + 1}}</span> / {{projects_info.length}}</p>
     <div class="container--imgs">
       <div :class="`wrapper--img img-${index}`" v-for="(item, index) in 3" :key="index">
         <NuxtLink :to="{path: `/${projects_info[project_number].title}`}">
@@ -16,10 +17,10 @@
       <p class="technos">{{ projects_info[project_number].techno }}</p>
       <!-- <h1>{{ projects_info[project_number].title }}</h1> -->
       <Title :title="projects_info[project_number].title" />
-      <div class="wrapper--comandes">
-        <p @click="animeImg('precedent')">precedent</p>
-        <p @click="animeImg('suivant')">suivant</p>
-      </div>
+    </div>
+    <div class="wrapper--comandes">
+      <p @click="animeImg('precedent')">precedent</p>
+      <p @click="animeImg('suivant')">suivant</p>
     </div>
   </div>
 </template>
@@ -62,29 +63,33 @@
             scale: 0.8,
             x: '20%',
           }, 'start+=0.25')
-        .to('.home h1 span', {
-          duration: 1,
-          stagger: 0.001,
-          skewX: 0,
-          skewY: 0,
-          y: 0,
-          ease: "expo.out",
-        }, 'start')
-        .to('.home .technos', {
-          opacity: 1,
-          y: '0px'
-        }, 'start+=0.2')
-        .to('.wrapper--comandes p', {
-          opacity: 1,
-          y: '0px'
-        }, 'commands')
-        .to('.wrapper--comandes--desktop p', {
-          opacity: 1,
-          y: '0px'
-        }, 'commands')
-        .to('.header', {
-          opacity: 1,
-        })
+          .to('.home h1 span', {
+            duration: 1,
+            stagger: 0.001,
+            skewX: 0,
+            skewY: 0,
+            y: 0,
+            ease: "expo.out",
+          }, 'start')
+
+          .to('.home .technos', {
+            opacity: 1,
+            y: '0px'
+          }, 'start+=0.2')
+          .to('.wrapper--comandes p', {
+            opacity: 1,
+            y: '0px'
+          }, 'commands')
+          .to('.wrapper--comandes--desktop p', {
+            opacity: 1,
+            y: '0px'
+          }, 'commands')
+          .to('.numbers--projects', {
+            opacity: 1
+          }, 'commands')
+          .to('.header', {
+            opacity: 1,
+          })
       }, 100);
     },
     methods: {
@@ -111,7 +116,9 @@
             scale: 1,
             ease: "expo.inOut",
           })
-          .to([wrapper_img_center.querySelector('a img'), wrapper_img_right.querySelector('a img'), wrapper_img_left.querySelector('a img')], {
+          .to([wrapper_img_center.querySelector('a img'), wrapper_img_right.querySelector('a img'), wrapper_img_left
+            .querySelector('a img')
+          ], {
             duration: duration,
             stagger: 0.05,
             top: '200%',
@@ -123,11 +130,19 @@
 
           }, 'start')
           .add(() => this.animeTitleToTop(), 'start')
+          .to('.numbers--projects span', {
+            duration: 0.5,
+            opacity: 0,
+            y: '10px'
+          }, 'start')
           .add(() => this.changeImg(value))
           .set([wrapper_img_center.querySelector('a img'), wrapper_img_right.querySelector('a img'), wrapper_img_left
             .querySelector('a img')
           ], {
             top: '-100%'
+          })
+          .set('.numbers--projects span', {
+            y: '-10px'
           })
           .to([wrapper_img_left.querySelector('a img'), wrapper_img_right.querySelector('a img'), wrapper_img_center
             .querySelector('a img')
@@ -136,7 +151,12 @@
             stagger: 0.05,
             top: '50%',
             ease: "expo.inOut",
-          },'second')
+          }, 'second')
+          .to('.numbers--projects span', {
+            duration: 0.5,
+            opacity: 1,
+            y: '0px'
+          }, 'ssecond')
           .add(() => this.animeTitleToBottom())
           .to('.technos', {
             duration: duration,
@@ -301,8 +321,9 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-evenly;
       margin-top: 20px;
+      padding: 0px 40px;
 
       @media screen and (min-width: $laptop) {
         display: none;
@@ -312,6 +333,13 @@
         opacity: 0;
         font-family: Title;
         text-transform: uppercase;
+      }
+    }
+
+    .numbers--projects {
+      opacity: 0;
+      >span {
+        display: inline-block;
       }
     }
   }
