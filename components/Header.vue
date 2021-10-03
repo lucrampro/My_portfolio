@@ -20,15 +20,11 @@ export default {
       links: [
         {
           name: 'projets',
-          path: '/'
+          path: '/Projets'
         },
         {
           name: 'a propos',
           path: '/About'
-        },
-        {
-          name: 'contact',
-          path: '/'
         },
       ]
     }

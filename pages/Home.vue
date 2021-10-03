@@ -74,9 +74,14 @@
           opacity: 1,
           y: '0px'
         }, 'start+=0.2')
-        .to('.wrapper--comandes, .wrapper--comandes--desktop', {
-          opacity: 1
-        })
+        .to('.wrapper--comandes p', {
+          opacity: 1,
+          y: '0px'
+        }, 'commands')
+        .to('.wrapper--comandes--desktop p', {
+          opacity: 1,
+          y: '0px'
+        }, 'commands')
         .to('.header', {
           opacity: 1,
         })
@@ -211,7 +216,6 @@
         width: 100%;
         max-width: 1230px;
         display: none;
-        opacity: 0;
 
         @media screen and (min-width: $laptop) {
           display: flex;
@@ -221,6 +225,7 @@
           font-family: Title;
           text-transform: uppercase;
           cursor: pointer;
+          opacity: 0;
         }
       }
 
@@ -298,13 +303,13 @@
       align-items: center;
       justify-content: space-between;
       margin-top: 20px;
-      opacity: 0;
 
       @media screen and (min-width: $laptop) {
         display: none;
       }
 
       p {
+        opacity: 0;
         font-family: Title;
         text-transform: uppercase;
       }
