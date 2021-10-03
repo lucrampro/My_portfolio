@@ -1,84 +1,84 @@
 [{
-    "poster": "hellomojito/poster.png",
+    "poster": "hellomojito/poster.jpg",
     "title": "hellomojito",
     "techno": "Vue.js, VueX, GSAP",
     "description": "Hellomojito est le portfolio principal de l'agence. L'entreprise divise ses activités en 3 parties ete site a été conçu pour présenter les sites les plus créatifs réalisés pour des clients.",
     "participation": "Je suis arrivé dans l'agence en cours de projet, on m’a demandé d'integrer des pages ainsi qu'animer les micro interactions et les transition entre pages.",
     "project_img": {
-      "first": "hellomojito/first.png",
-      "second": "hellomojito/second.png",
-      "third": "hellomojito/third.png",
-      "four": "hellomojito/four.png",
-      "five": "hellomojito/five.png"
+      "first": "hellomojito/first.jpeg",
+      "second": "hellomojito/second.jpeg",
+      "third": "hellomojito/third.jpeg",
+      "four": "hellomojito/four.jpeg",
+      "five": "hellomojito/five.jpeg"
     }
   },
   {
-    "poster": "signature/poster.png",
+    "poster": "signature/poster.jpg",
     "title": "signature",
     "techno": "Nuxt.js, GSAP",
     "description": "Signature est un site de presentation de produits qui vise a mettre en avant les prestation \"print\" de l'agence hellomojito",
     "participation": "J'ai developper se projet en autonomie dans le cadre de monste de developpeur au sein de l'agence hellomojito.",
     "project_img": {
-      "first": "signature/first.png",
-      "second": "signature/second.png",
-      "third": "signature/third.png",
-      "four": "signature/four.png",
-      "five": "signature/five.png"
+      "first": "signature/first.jpg",
+      "second": "signature/second.jpg",
+      "third": "signature/third.jpg",
+      "four": "signature/four.jpg",
+      "five": "signature/five.jpg"
     }
   },
   {
-    "poster": "mixologue/poster.png",
+    "poster": "mixologue/poster.jpeg",
     "title": "mixologue",
     "techno": "Vue.js, GSAP, VueX",
     "description": "Le Mixologue est un vendeur de e-liquid pour cigarettes electronique.",
     "participation": "Sur ce projet j'ai eu a upgrade les fonctionnaliter deja en place et autres maintenance corrective.",
     "project_img": {
-      "first": "mixologue/first.png",
-      "second": "mixologue/second.png",
-      "third": "mixologue/third.png",
-      "four": "mixologue/four.png",
-      "five": "mixologue/five.png"
+      "first": "mixologue/first.jpeg",
+      "second": "mixologue/second.jpeg",
+      "third": "mixologue/third.jpeg",
+      "four": "mixologue/four.jpeg",
+      "five": "mixologue/five.jpeg"
     }
   },
   {
-    "poster": "auzen/poster.png",
+    "poster": "auzen/poster.jpeg",
     "title": "auzen",
     "techno": "Javascript",
     "description": "Auzen révolutionne l’accès aux soins auditifs en offrant un service premium inédit: l'accès en ligne à une grande variété d'aides auditives de pointe, à un prix juste et transparent.",
     "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai implementer des integration fromscratch dans le template Wordpress et j'ai animer des elements.",
     "project_img": {
-      "first": "auzen/first.png",
-      "second": "auzen/second.png",
-      "third": "auzen/third.png",
-      "four": "auzen/four.png",
-      "five": "auzen/five.png"
+      "first": "auzen/first.jpeg",
+      "second": "auzen/second.jpeg",
+      "third": "auzen/third.jpeg",
+      "four": "auzen/four.jpeg",
+      "five": "auzen/five.jpeg"
     }
   },
   {
-    "poster": "itq/poster.png",
+    "poster": "itq/poster.jpeg",
     "title": "itq",
     "techno": "Wordpress",
     "description": "ITQ Security est un acteur majeur de la sécurité électronique, Spécialisé dans les technologies de sécurité électronique détection intrusion, vidéo surveillance, contrôle d’accès, détection incendie….",
     "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai participer au developpement du site ITQ via le CMS Wordpress",
     "project_img": {
-      "first": "itq/first.png",
-      "second": "itq/second.png",
-      "third": "itq/third.png",
-      "four": "itq/four.png"
+      "first": "itq/first.jpeg",
+      "second": "itq/second.jpeg",
+      "third": "itq/third.jpeg",
+      "four": "itq/four.jpeg"
 
     }
   },
   {
-    "poster": "xls/poster.png",
+    "poster": "xls/poster.jpeg",
     "title": "xls",
     "techno": "Javascript",
     "description": "Expert de la sécurité antivol, Spécialisée dans la surveillance électronique des articles en magasin, la société XL Security a conçu et réalisé une large gamme de solutions.",
     "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai participer au developpement du site XLS les missions qui mon etait confier sur ce site etait d'animer la page d'acceuil fromscratch et d'integrer les elements des pages via le CMS wordpress",
     "project_img": {
-      "first": "xls/first.png",
-      "second": "xls/second.png",
-      "third": "xls/third.png",
-      "four": "xls/four.png"
+      "first": "xls/first.jpeg",
+      "second": "xls/second.jpeg",
+      "third": "xls/third.jpeg",
+      "four": "xls/four.jpeg"
 
     }
   }

@@ -9,7 +9,7 @@ export default {
   name: 'SquareImg',
   props: {
     img_path: {
-      default: 'hellomojito/poster.png'
+      default: 'hellomojito/poster.jpg'
     }
   }
 }
@@ -18,7 +18,7 @@ export default {
 <style lang="scss">
 
       .wrapper--square--img {
-        
+
         width: 220px;
         height: 240px;
         overflow: hidden;
