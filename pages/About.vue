@@ -424,8 +424,6 @@
       font-weight: bold;
       text-align: center;
       text-transform: uppercase;
-      opacity: 0;
-      transform: translateY(40px);
       margin: 30px 0px;
     }
   }
