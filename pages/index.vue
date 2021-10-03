@@ -2,11 +2,13 @@
   <client-only>
     <div id="app">
       <Home v-if="loading" />
-      <div class="loading--overlay">
+      <div class="loading--overlay" v-else>
+        <Title title="Chargement..." />
         <div class="wrapper--title">
           <Title title="Developpeur" />
           <Title title="front" />
           <Title title="end" />
+          <Title title="Parisien" />
         </div>
         <div class="wrapper--title">
           <Title title="Disponible" />
@@ -15,7 +17,6 @@
           <Title title="missions" />
           <Title title="freelance" />
         </div>
-        <Title title="Chargement..." />
       </div>
     </div>
   </client-only>
@@ -36,9 +37,13 @@
     components: {
       Home
     },
-    mounted() {
-      // console.log(this.projets);
-
+    created() {
+      require('~/assets/fonts/Derivia-Regular.otf')
+      require('~/assets/fonts/Helvetica-regular.otf')
+      require('~/assets/fonts/HelveticaNeueLTProLtEx.woff')
+      require('~/assets/fonts/HelveticaNeueLTProMdEx.woff')
+      const me = new Image
+      me.src = require(`~/assets/imgs/about/me.jpg`);
       this.projets.forEach(image => {
 
         const poster = new Image;
@@ -60,21 +65,28 @@
         five.src = require(`~/assets/imgs/projets/${image.project_img.five}`);
 
       });
-
-
+    },
+    mounted() {
 
       setTimeout(() => {
-        gsap.timeline().to('.loading--overlay h1 span', {
-          duration: 1.5,
-          stagger: 0.03,
-          opacity: 1,
-          y: '0px'
-        })
-        .to('.loading--overlay', {
-          opacity: 0,
-          delay: 1
-        })
-        .add(() => this.loading = true)
+        gsap.timeline().to('.loading--overlay >h1 span', {
+            duration: 1.5,
+            stagger: 0.03,
+            opacity: 1,
+            y: '0px'
+          })
+          .to('.loading--overlay h1 span', {
+            duration: 1.5,
+            stagger: 0.03,
+            opacity: 1,
+            y: '0px',
+            delay: 1
+          })
+          .to('.loading--overlay', {
+            opacity: 0,
+            delay: 1
+          })
+          .add(() => this.loading = true)
       }, 500);
     },
     transition: {
