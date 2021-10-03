@@ -1,7 +1,22 @@
 <template>
   <client-only>
     <div id="app">
-      <Home />
+      <Home v-if="loading" />
+      <div class="loading--overlay">
+        <div class="wrapper--title">
+          <Title title="Developpeur" />
+          <Title title="front" />
+          <Title title="end" />
+        </div>
+        <div class="wrapper--title">
+          <Title title="Disponible" />
+          <Title title="pour" />
+          <Title title="des" />
+          <Title title="missions" />
+          <Title title="freelance" />
+        </div>
+        <Title title="Chargement..." />
+      </div>
     </div>
   </client-only>
 </template>
@@ -9,10 +24,58 @@
 <script>
   import Home from './Home'
   import gsap from 'gsap'
+  import projets from '../projets.json'
   export default {
     name: 'default',
+    data() {
+      return {
+        loading: false,
+        projets: [...projets]
+      }
+    },
     components: {
       Home
+    },
+    mounted() {
+      // console.log(this.projets);
+
+      this.projets.forEach(image => {
+
+        const poster = new Image;
+        poster.src = require(`~/assets/imgs/projets/${image.poster}`);
+
+        const first = new Image;
+        first.src = require(`~/assets/imgs/projets/${image.project_img.first}`);
+
+        const second = new Image;
+        second.src = require(`~/assets/imgs/projets/${image.project_img.second}`);
+
+        const third = new Image;
+        third.src = require(`~/assets/imgs/projets/${image.project_img.third}`);
+
+        const four = new Image;
+        four.src = require(`~/assets/imgs/projets/${image.project_img.four}`);
+
+        const five = new Image;
+        five.src = require(`~/assets/imgs/projets/${image.project_img.five}`);
+
+      });
+
+
+
+      setTimeout(() => {
+        gsap.timeline().to('.loading--overlay h1 span', {
+          duration: 1.5,
+          stagger: 0.03,
+          opacity: 1,
+          y: '0px'
+        })
+        .to('.loading--overlay', {
+          opacity: 0,
+          delay: 1
+        })
+        .add(() => this.loading = true)
+      }, 500);
     },
     transition: {
       css: false,
@@ -69,5 +132,30 @@
 <style lang='scss'>
   #app {
     min-height: 100vh;
+
+    .loading--overlay {
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      background-color: #030303;
+      color: #fff;
+      padding: 40px;
+
+      h1 {
+        font-size: 30px;
+        margin-right: 10px;
+
+        span {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+      }
+
+      .wrapper--title {
+        display: flex;
+      }
+    }
   }
 </style>

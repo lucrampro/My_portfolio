@@ -64,8 +64,8 @@
       "first": "itq/first.jpeg",
       "second": "itq/second.jpeg",
       "third": "itq/third.jpeg",
-      "four": "itq/four.jpeg"
-
+      "four": "itq/four.jpeg",
+      "five": "itq/five.jpeg"
     }
   },
   {
@@ -78,8 +78,8 @@
       "first": "xls/first.jpeg",
       "second": "xls/second.jpeg",
       "third": "xls/third.jpeg",
-      "four": "xls/four.jpeg"
-
+      "four": "xls/four.jpeg",
+      "five": "xls/five.jpeg"
     }
   }
 ]
