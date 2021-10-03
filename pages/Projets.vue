@@ -88,7 +88,7 @@
   .projets {
     height: 100vh;
     width: 100%;
-
+    overflow: hidden;
     .container--projet {
       height: 100vh;
       width: fit-content;

@@ -11,11 +11,15 @@ body {
 body {
   font-family: Text;
   background-color: #fefefe;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .text--bold {
   font-family: 'Text--bold';
+}
+
+.c-scrollbar_thumb {
+  opacity: 0;
 }
 .bg--noise {
   position: fixed;

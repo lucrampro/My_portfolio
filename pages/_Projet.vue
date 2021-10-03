@@ -67,7 +67,7 @@
 
 <script>
   import Projets from '../projets.json';
-  // import LocomotiveScroll from 'locomotive-scroll';
+  import LocomotiveScroll from 'locomotive-scroll';
   import gsap from 'gsap';
   export default {
     name: 'Projet',
@@ -77,6 +77,7 @@
         projet: {},
         number_projet: 0,
         mounted_component: true,
+        scroll: null,
       }
     },
     created() {
@@ -84,6 +85,12 @@
     },
     mounted() {
       setTimeout(() => {
+
+        this.scroll = new LocomotiveScroll({
+          el: document.body,
+          smooth: true
+        });
+
         gsap.timeline().set('.projet .wrapper--presentation .title--composant span', {
             skewX: '60deg',
             skewY: '60deg'
@@ -112,6 +119,11 @@
             opacity: 1,
           })
       }, 100);
+
+
+    },
+    beforeDestroy() {
+      this.scroll.destroy();
     },
     methods: {
       getProjet() {
@@ -165,6 +177,7 @@
 <style lang="scss">
   .projet {
     padding-top: 80px;
+    height: fit-content;
 
     .wrapper--presentation {
 

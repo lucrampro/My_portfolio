@@ -57,6 +57,7 @@
 
 <script>
   import gsap from 'gsap'
+  import LocomotiveScroll from 'locomotive-scroll';
 
   export default {
     name: 'About',
@@ -104,11 +105,16 @@
               }
             ]
           }
-        }
+        },
+        scroll: null,
       }
     },
     mounted() {
       setTimeout(() => {
+        this.scroll = new LocomotiveScroll({
+          el: document.body,
+          smooth: true
+        });
         gsap.timeline().set('.wrapper--presentation h1 span', {
             skewX: '60deg',
             skewY: '60deg'
@@ -127,6 +133,9 @@
             opacity: 1,
           })
       }, 100)
+    },
+    beforeDestroy() {
+      this.scroll.destroy();
     },
     methods: {
       onIntersect(observer) {
