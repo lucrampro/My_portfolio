@@ -6,9 +6,8 @@
       <div class="wrapper--img">
         <img :src="require(`~/assets/imgs/about/me.jpg`)" alt="" srcset="">
       </div>
-      <p class="presentation--pitch">Je suis RAMASSAMY Lucien, developpeur front end base en ile-de-france, j’aime
-        travailler sur des projets creatif a ou mon role est d’integrer et animer les contenu, les micro interation et
-        transitions de pages. </p>
+      <p class="presentation--pitch">Je m'appel <span class="text--bold">RAMASSAMY LUCIEN</span> développeur front end depuis 2ans basé en ile-de-france, j’aime
+        travailler sur des projets creatifs ou des services specifiques utiles.</p>
     </div>
 
     <div class="wrapper--story">
@@ -46,10 +45,10 @@
 
       <a href="mailto:toto@toto.com">
         <!-- <h1>envie de collaborer avec moi ? n’hesitez pas a me contacter</h1> -->
-        <Words class="wrapper--words" Text="envie de collaborer avec moi ? n’hesitez pas a me contacter" />
+        <Words class="wrapper--words" Text="envie de collaborer avec moi ? Cliquez pour me contacter" />
       </a>
     </div>
-    <p class="design-by" v-intersect="onIntersect">Design by Bastien Guimelli</p>
+    <p class="design-by text--bold" v-intersect="onIntersect">Design by Bastien Guimelli</p>
 
     <!-- END  -->
   </div>
@@ -67,22 +66,22 @@
           title: 'Experience',
           content: [{
               title: 'Developpeur front end - Hellomojito 2019-2021',
-              content: 'En poste 2 ans au sein de l’agence Hellomojito j’ai participper au developpement de la partit front end des projets, cette experiences ma beaucoup apporter et ma permis de developper de superbe projets en autonomie seul a la charge de la partit front end'
+              content: 'En poste 2 ans au sein de l’agence Hellomojito j’ai participer au developpement de la partie front end des projets, cette experiences ma beaucoup apporté et ma permis de developper de superbe projets.'
             },
             {
               title: 'Integrateur - Polkatulk 2018',
-              content: 'Diplome de niveau bac + 3 « Developpeur web » au sein de l’etablissement HETIC, cette formation en 3 ans en alternances propose un programme solide coherent avec les technologie actuel du marcher pour former des developpeur competent.'
+              content: 'En poste 3 mois cette éxperience qui fut la premières ma permis de decouvrir le monde de l\'entreprise.'
             }
           ]
         }, {
           title: 'Education',
           content: [{
-              title: 'Bachelor Developpeur web - HETIC',
-              content: 'Diplome de niveau bac + 3 « Developpeur web » au sein de l’etablissement HETIC, cette formation en 3 ans en alternances propose un programme solide coherent avec les technologie actuel du marcher pour former des developpeur competent.'
+              title: 'HETIC - Bachelor Developpeur web',
+              content: 'Diplome de niveau bac + 3 « Developpeur web » au sein de l’etablissement HETIC, formation en 3 ans en alternance propose un programme solide coherent avec les technologies actuel du marché.'
             },
             {
-              title: 'Bachelor chef de projet multimedia - IESA',
-              content: 'Diplome de niveau bac + 3 « Chef de projet Multimedia » au sein de l’etablissement IESA Multimedia, cette formation en 3 ans en alternances propose un programme solide pour former des chef de projet competent.'
+              title: 'IESA - Bachelor chef de projet multimedia',
+              content: 'Diplome de niveau bac + 3 « Chef de projet Multimedia » au sein de l’etablissement IESA Multimedia, formation en 3 ans en alternances propose un programme solide pour former des chefs de projets competents.'
             }
           ]
         }],
@@ -111,10 +110,12 @@
     },
     mounted() {
       setTimeout(() => {
-        this.scroll = new LocomotiveScroll({
-          el: document.body,
-          smooth: true
-        });
+        // if (this.$store.state.is_mobile === false) {
+        //   this.scroll = new LocomotiveScroll({
+        //     el: document.querySelector('.container--scroll'),
+        //     smooth: true
+        //   });
+        // }
         gsap.timeline().set('.wrapper--presentation h1 span', {
             skewX: '60deg',
             skewY: '60deg'
@@ -134,9 +135,11 @@
           })
       }, 100)
     },
-    beforeDestroy() {
-      this.scroll.destroy();
-    },
+    // beforeDestroy() {
+    //   if (this.$store.state.is_mobile === false) {
+    //     this.scroll.destroy();
+    //   }
+    // },
     methods: {
       onIntersect(observer) {
         this.isVisible = observer.isIntersecting
@@ -267,7 +270,7 @@
       .presentation--pitch {
         text-align: justify;
         font-weight: bold;
-
+        margin: 20px;
         @media screen and (min-width: $laptop) {
           text-align: left;
         }
@@ -317,7 +320,7 @@
         margin: auto;
       }
 
-      @media screen and (min-width: $laptop) {
+      @media screen and (min-width: 730px) {
         display: flex;
 
       }
@@ -329,7 +332,7 @@
           font-size: 20px;
         }
 
-        @media screen and (min-width: $laptop) {
+        @media screen and (min-width: 730px) {
           margin-right: 240px;
         }
 
@@ -363,6 +366,9 @@
 
       h1 {
         text-align: center;
+          font-size: 40px;
+        letter-spacing: 0.5px;
+
 
         @media screen and (min-width: $laptop) {
           margin: 30px 0px;
@@ -373,7 +379,7 @@
           opacity: 0;
           transform: translateY(40px);
           display: inline-block;
-          margin-right: 20px;
+          margin-right: 10px;
         }
       }
 
@@ -392,6 +398,7 @@
     }
 
     .wrapper--youtube {
+      margin: 0px 20px;
       .title--composant {
         span {
           opacity: 0;
@@ -411,12 +418,15 @@
 
     }
 
+
+
     .design-by {
       font-weight: bold;
       text-align: center;
       text-transform: uppercase;
       opacity: 0;
       transform: translateY(40px);
+      margin: 30px 0px;
     }
   }
 </style>

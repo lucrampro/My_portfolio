@@ -2,22 +2,22 @@
     "poster": "hellomojito/poster.jpg",
     "title": "hellomojito",
     "techno": "Vue.js, VueX, GSAP",
-    "description": "Hellomojito est le portfolio principal de l'agence. L'entreprise divise ses activités en 3 parties ete site a été conçu pour présenter les sites les plus créatifs réalisés pour des clients.",
-    "participation": "Je suis arrivé dans l'agence en cours de projet, on m’a demandé d'integrer des pages ainsi qu'animer les micro interactions et les transition entre pages.",
+    "description": "Hellomojito est le portfolio de l'agenceHellomojito dans la quel j'ai etait en poste.",
+    "participation": "Developpement VueJS, integrations, animations.",
     "project_img": {
       "first": "hellomojito/first.jpeg",
       "second": "hellomojito/second.jpeg",
       "third": "hellomojito/third.jpeg",
       "four": "hellomojito/four.jpeg",
       "five": "hellomojito/five.jpeg"
-    }
+    },
   },
   {
     "poster": "signature/poster.jpg",
     "title": "signature",
     "techno": "Nuxt.js, GSAP",
-    "description": "Signature est un site de presentation de produits qui vise a mettre en avant les prestation \"print\" de l'agence hellomojito",
-    "participation": "J'ai developper se projet en autonomie dans le cadre de monste de developpeur au sein de l'agence hellomojito.",
+    "description": "Signature est un site de presentation de produits qui vise a mettre en avant les prestation \"print\" de l'agence Hellomojito.",
+    "participation": "Developpement NuxtJS, integrations, communication avec une API, animations, utilisation du store.",
     "project_img": {
       "first": "signature/first.jpg",
       "second": "signature/second.jpg",
@@ -31,7 +31,7 @@
     "title": "mixologue",
     "techno": "Vue.js, GSAP, VueX",
     "description": "Le Mixologue est un vendeur de e-liquid pour cigarettes electronique.",
-    "participation": "Sur ce projet j'ai eu a upgrade les fonctionnaliter deja en place et autres maintenance corrective.",
+    "participation": "Developpement VueJS, Update du projet, utilisation du store",
     "project_img": {
       "first": "mixologue/first.jpeg",
       "second": "mixologue/second.jpeg",
@@ -45,7 +45,7 @@
     "title": "auzen",
     "techno": "Javascript",
     "description": "Auzen révolutionne l’accès aux soins auditifs en offrant un service premium inédit: l'accès en ligne à une grande variété d'aides auditives de pointe, à un prix juste et transparent.",
-    "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai implementer des integration fromscratch dans le template Wordpress et j'ai animer des elements.",
+    "participation": "Developpement javascript, integration, animation.",
     "project_img": {
       "first": "auzen/first.jpeg",
       "second": "auzen/second.jpeg",
@@ -59,7 +59,7 @@
     "title": "itq",
     "techno": "Wordpress",
     "description": "ITQ Security est un acteur majeur de la sécurité électronique, Spécialisé dans les technologies de sécurité électronique détection intrusion, vidéo surveillance, contrôle d’accès, détection incendie….",
-    "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai participer au developpement du site ITQ via le CMS Wordpress",
+    "participation": "Integration WORDPRESS, developpement javascript, animation.",
     "project_img": {
       "first": "itq/first.jpeg",
       "second": "itq/second.jpeg",
@@ -73,7 +73,7 @@
     "title": "xls",
     "techno": "Javascript",
     "description": "Expert de la sécurité antivol, Spécialisée dans la surveillance électronique des articles en magasin, la société XL Security a conçu et réalisé une large gamme de solutions.",
-    "participation": "Dans le cadre de mon poste au sein de l'agence Hellomojito j'ai participer au developpement du site XLS les missions qui mon etait confier sur ce site etait d'animer la page d'acceuil fromscratch et d'integrer les elements des pages via le CMS wordpress",
+    "participation": "Developpement javascript, integration, animation.",
     "project_img": {
       "first": "xls/first.jpeg",
       "second": "xls/second.jpeg",

@@ -1,69 +1,77 @@
 <template>
-<client-only>
-  <div class="projet">
-    <!-- PRESENTATION PROJECT  -->
-    <div class="wrapper--presentation">
+  <client-only>
+    <div class="projet">
+      <!-- PRESENTATION PROJECT  -->
+      <div class="wrapper--presentation">
 
-      <Title :title="projet.title" />
-      <p class="description">{{projet.description}}</p>
-      <div class="wrapper--img">
-        <img class="poster" :src="require(`~/assets/imgs/projets/${projet.poster}`)" alt="">
-      </div>
-      <h2>ma participation</h2>
-      <p style="margin-bottom: 20px">{{projet.participation}}</p>
-      <h2>Stack</h2>
-      <p>{{projet.techno}}</p>
-    </div>
-    <!-- PRESENTATION PROJECT  -->
-
-    <div class="separator"></div>
-
-    <!-- CONTENT PROJECT  -->
-    <div class="wrapper--content">
-      <div class="wrapper--img wrapper--first--img" v-intersect="onIntersect">
-        <img :src="require(`~/assets/imgs/projets/${projet.project_img.first}`)" alt="">
-      </div>
-
-      <div class="wrapper--second--third--img">
-        <div class="wrapper--img" v-intersect="onIntersect"><img
-            :src="require(`~/assets/imgs/projets/${projet.project_img.second}`)" alt="">
+        <Title :title="projet.title" />
+        <p class="description">{{projet.description}}</p>
+        <div class="wrapper--img">
+          <img class="poster" :src="require(`~/assets/imgs/projets/${projet.poster}`)" alt="">
         </div>
-        <div class="wrapper--img" v-intersect="onIntersect"><img
-            :src="require(`~/assets/imgs/projets/${projet.project_img.third}`)" alt=""></div>
+        <h2>ma participation</h2>
+        <p style="margin-bottom: 20px">{{projet.participation}}</p>
+        <h2>Stack</h2>
+        <p>{{projet.techno}}</p>
       </div>
+      <!-- PRESENTATION PROJECT  -->
 
-      <div class="wrapper--four--img">
-        <div class="wrapper--img" v-intersect="onIntersect"><img
-            :src="require(`~/assets/imgs/projets/${projet.project_img.four}`)" alt=""></div>
+      <div class="separator"></div>
+
+      <!-- CONTENT PROJECT  -->
+      <div class="wrapper--content">
+        <div class="wrapper--img wrapper--first--img" v-intersect="onIntersect">
+          <img :src="require(`~/assets/imgs/projets/${projet.project_img.first}`)" alt="">
+        </div>
+
+        <div class="wrapper--second--third--img">
+          <div class="wrapper--img" v-intersect="onIntersect"><img
+              :src="require(`~/assets/imgs/projets/${projet.project_img.second}`)" alt="">
+          </div>
+          <div class="wrapper--img" v-intersect="onIntersect"><img
+              :src="require(`~/assets/imgs/projets/${projet.project_img.third}`)" alt=""></div>
+        </div>
+
+        <div class="wrapper--four--img">
+          <div class="wrapper--img" v-intersect="onIntersect"><img
+              :src="require(`~/assets/imgs/projets/${projet.project_img.four}`)" alt=""></div>
+        </div>
+        <div v-if="projet.project_img.five" class="wrapper--five--img">
+          <div class="wrapper--img" v-intersect="onIntersect"><img
+              :src="require(`~/assets/imgs/projets/${projet.project_img.five}`)" alt=""></div>
+        </div>
       </div>
-      <div v-if="projet.project_img.five" class="wrapper--five--img">
-        <div class="wrapper--img" v-intersect="onIntersect"><img
-            :src="require(`~/assets/imgs/projets/${projet.project_img.five}`)" alt=""></div>
+      <!-- CONTENT PROJECT  -->
+
+      <!-- NEXT OR PREVIOUS PROJECT  -->
+      <div class="container--other-projets">
+        <div class="wrapper--previus--projet wrapper--other--projet">
+          <NuxtLink :to="{path: `/${projects_info[getOtherProject(number_projet - 1)].title}`}">
+            <!-- <SquareImg :img_path="projects_info[getOtherProject(number_projet - 1)].poster" /> -->
+            <div class="wrapper--img">
+              <img :src="require(`~/assets/imgs/projets/${projects_info[getOtherProject(number_projet - 1)].poster}`)"
+                alt="">
+            </div>
+            <h1>{{projects_info[getOtherProject(number_projet - 1)].title}}</h1>
+            <p>Precedent</p>
+          </NuxtLink>
+        </div>
+        <div class="wrapper--next--projet wrapper--other--projet">
+          <NuxtLink :to="{path: `/${projects_info[getOtherProject(number_projet + 1)].title}`}">
+
+            <!-- <SquareImg :img_path="projects_info[getOtherProject(number_projet + 1)].poster" /> -->
+            <div class="wrapper--img">
+              <img :src="require(`~/assets/imgs/projets/${projects_info[getOtherProject(number_projet + 1)].poster}`)"
+                alt="">
+            </div>
+            <h1>{{projects_info[getOtherProject(number_projet + 1)].title}}</h1>
+            <p>Suivant</p>
+          </NuxtLink>
+        </div>
       </div>
+      <!-- NEXT OR PREVIOUS PROJECT  -->
+
     </div>
-    <!-- CONTENT PROJECT  -->
-
-    <!-- NEXT OR PREVIOUS PROJECT  -->
-    <div class="container--other-projets">
-      <div class="wrapper--previus--projet wrapper--other--projet">
-        <NuxtLink :to="{path: `/${projects_info[getOtherProject(number_projet - 1)].title}`}">
-          <SquareImg :img_path="projects_info[getOtherProject(number_projet - 1)].poster" />
-          <h1>{{projects_info[getOtherProject(number_projet - 1)].title}}</h1>
-          <p>Precedent</p>
-        </NuxtLink>
-      </div>
-      <div class="wrapper--next--projet wrapper--other--projet">
-        <NuxtLink :to="{path: `/${projects_info[getOtherProject(number_projet + 1)].title}`}">
-
-          <SquareImg :img_path="projects_info[getOtherProject(number_projet + 1)].poster" />
-          <h1>{{projects_info[getOtherProject(number_projet + 1)].title}}</h1>
-          <p>Suivant</p>
-        </NuxtLink>
-      </div>
-    </div>
-    <!-- NEXT OR PREVIOUS PROJECT  -->
-
-  </div>
   </client-only>
 </template>
 
@@ -87,11 +95,12 @@
     },
     mounted() {
       setTimeout(() => {
-
-        this.scroll = new LocomotiveScroll({
-          el: document.body,
-          smooth: true
-        });
+        // if(this.$store.state.is_mobile === false) {
+        //   this.scroll = new LocomotiveScroll({
+        //     el: document.querySelector('.container--scroll'),
+        //     smooth: true
+        //   });
+        // }
 
         gsap.timeline().set('.projet .wrapper--presentation .title--composant span', {
             skewX: '60deg',
@@ -124,9 +133,11 @@
 
 
     },
-    beforeDestroy() {
-      this.scroll.destroy();
-    },
+    // beforeDestroy() {
+    //   if (this.$store.state.is_mobile === false) {
+    //     this.scroll.destroy();
+    //   }
+    // },
     methods: {
       getProjet() {
         for (const [index, projet] of this.projects_info.entries()) {
@@ -197,7 +208,7 @@
       .wrapper--img {
         opacity: 0;
         transform: translateX(-50px);
-        width: 60%;
+        width: 80%;
         margin: 0px auto;
 
         .poster {
@@ -221,6 +232,16 @@
           margin: 0 auto;
         }
       }
+
+            p {
+        @media screen and (max-width: $laptop) {
+          margin: 0px 20px;
+          text-align: left;
+        }
+      }
+      h2 {
+        margin-bottom: 5px;
+      }
     }
 
 
@@ -235,8 +256,7 @@
       }
 
       .wrapper--first--img {
-        width: 50%;
-        margin: 20px auto;
+        width: 100%;
       }
 
       .wrapper--second--third--img {
@@ -246,19 +266,9 @@
 
           .wrapper--img {
             width: 50%;
-            margin: 20px 0px;
+
           }
         }
-      }
-
-      .wrapper--four--img,
-      .wrapper--five--img {
-        margin: 40px 0px;
-      }
-
-      .wrapper--five--img {
-        width: 60%;
-        margin: 40px auto;
       }
 
     }
@@ -266,66 +276,37 @@
     .container--other-projets {
       display: flex;
       margin: 60px 0px;
+      justify-content: space-around;
 
       .wrapper--other--projet {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        margin-top: 100px;
+        a {
+          h1, p {
+            text-align: center;
+          }
+
+        }
+
+        .wrapper--img {
+          display: none;
+          @media screen and (min-width: $laptop) {
+            height: 300px;
+            display: block;
+            margin-bottom: 10px;
+          }
+
+          img {
+
+            @media screen and (min-width: $laptop) {
+              height: 100%;
+            }
+          }
+        }
 
         h1 {
-          margin: 0;
-          font-size: 22px;
-
-          @media screen and (min-width: $tablet) {
-            font-size: 42px;
-          }
-        }
-
-        p {
-          font-size: 12px;
-          text-align: center;
-        }
-
-        .wrapper--square--img {
-          display: none;
-
-          @media screen and (min-width: $tablet) {
-            display: inherit;
-          }
+          font-size: 20px;
 
         }
       }
-
-      .wrapper--previus--projet {
-
-        .wrapper--square--img {
-          transform: rotate(-15deg) scale(0.6);
-
-          @media screen and (min-width: $laptop) {
-            transform: rotate(-15deg) scale(1);
-            margin-bottom: 50px;
-
-          }
-        }
-      }
-
-      .wrapper--next--projet {
-
-        .wrapper--square--img {
-          transform: rotate(15deg) scale(0.6);
-
-          @media screen and (min-width: $laptop) {
-            transform: rotate(15deg) scale(1);
-            margin-bottom: 50px;
-
-          }
-        }
-      }
-
-
     }
 
     .separator {

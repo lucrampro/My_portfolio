@@ -333,6 +333,7 @@
         opacity: 0;
         font-family: Title;
         text-transform: uppercase;
+        cursor: pointer;
       }
     }
 

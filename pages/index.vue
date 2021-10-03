@@ -1,15 +1,11 @@
 <template>
   <client-only>
     <div id="app">
-      <Home v-if="loading" />
+      <Home v-if="$store.state.loading" />
       <div class="loading--overlay" v-else>
         <Title title="Chargement..." />
-        <div class="wrapper--title">
           <Title title="Developpeur" />
-          <Title title="front" />
-          <Title title="end" />
-          <Title title="Parisien" />
-        </div>
+
         <div class="wrapper--title">
           <Title title="Disponible" />
           <Title title="pour" />
@@ -26,12 +22,16 @@
   import Home from './Home'
   import gsap from 'gsap'
   import projets from '../projets.json'
+  import LocomotiveScroll from 'locomotive-scroll'
+
+  import {
+    mapMutations
+  } from 'vuex'
   export default {
     name: 'default',
     data() {
       return {
-        loading: false,
-        projets: [...projets]
+        projets: [...projets],
       }
     },
     components: {
@@ -69,26 +69,58 @@
     mounted() {
 
       setTimeout(() => {
-        gsap.timeline().to('.loading--overlay >h1 span', {
-            duration: 1.5,
-            stagger: 0.03,
-            opacity: 1,
-            y: '0px'
-          })
-          .to('.loading--overlay h1 span', {
-            duration: 1.5,
-            stagger: 0.03,
-            opacity: 1,
-            y: '0px',
-            delay: 1
-          })
-          .to('.loading--overlay', {
-            opacity: 0,
-            delay: 1
-          })
-          .add(() => this.loading = true)
+        // if (this.$store.state.is_mobile === false) {
+        //   this.scroll = new LocomotiveScroll({
+        //     el: document.querySelector('.container--scroll'),
+        //     smooth: true
+        //   });
+        // }
+        if (this.$store.state.loading === false) {
+          gsap.timeline().to('.loading--overlay >h1 span', {
+              duration: 1.5,
+              stagger: 0.03,
+              opacity: 1,
+              y: '0px'
+            })
+            .to('.loading--overlay h1 span', {
+              duration: 1.5,
+              stagger: 0.03,
+              opacity: 1,
+              y: '0px',
+              delay: 1
+            })
+            .to('.loading--overlay', {
+              opacity: 0,
+              delay: 1
+            })
+            .add(() => this.UpdateLoading(true))
+        }
       }, 500);
+
+      if (window.innerWidth > 1280) {
+        this.TestDeviceSize(false);
+      } else {
+        this.TestDeviceSize(true);
+      }
+      window.addEventListener('resize', e => {
+        if (window.innerWidth > 1280) {
+          this.TestDeviceSize(false);
+        } else {
+          this.TestDeviceSize(true);
+        }
+
+      });
     },
+    // beforeDestroy() {
+    //   if (this.$store.state.is_mobile === false) {
+    //     gsap.set('body', {overflow: 'hiden'})
+    //     this.scroll.destroy();
+    //   }
+    // },
+    methods: {
+      ...mapMutations(['TestDeviceSize', 'UpdateLoading']),
+    },
+
     transition: {
       css: false,
       leave(el, done) {
@@ -137,7 +169,14 @@
           }, 'start')
           .add(() => done())
       }
-    }
+    },
+    // watch: {
+    //   '$store.state.is_mobile': function (new_value, old_value) {
+    //     if (new_value && old_value === false) {
+    //       window.location.reload();
+    //     }
+    //   }
+    // }
   }
 </script>
 
@@ -166,7 +205,10 @@
       }
 
       .wrapper--title {
-        display: flex;
+        @media screen and(min-width: $laptop) {
+          display: flex;
+
+        }
       }
     }
   }
