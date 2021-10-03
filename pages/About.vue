@@ -125,11 +125,15 @@
             skewY: '0deg',
             skewX: '0deg',
           })
-          .to('.wrapper--presentation .wrapper--img, .wrapper--presentation p', {
-            stagger: 0.2,
+          .to('.wrapper--presentation .wrapper--img', {
+            duration: 1,
             opacity: 1,
             x: '0px',
-          })
+          },'start')
+          .to('.wrapper--presentation p', {
+            opacity: 1,
+            x: '0px',
+          },'start')
           .to('.header', {
             opacity: 1,
           })
