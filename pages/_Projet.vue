@@ -13,6 +13,7 @@
         <p style="margin-bottom: 20px">{{projet.participation}}</p>
         <h2>Stack</h2>
         <p>{{projet.techno}}</p>
+        <a v-if="projet.link !== 'false'" v-intersect="onIntersect" :href="projet.link" target="_blank" class="text--bold link" rel="noopener noreferrer">Lien du site</a>
       </div>
       <!-- PRESENTATION PROJECT  -->
 
@@ -242,6 +243,23 @@
       h2 {
         margin-bottom: 5px;
       }
+
+      .link {
+        text-align: center;
+        text-transform: uppercase;
+        background: black;
+        color: #ffffff;
+        padding: 15px;
+        display: block;
+        max-width: 200px;
+        margin: 0 auto;
+        margin-top: 20px;
+        transition: 0.2s;
+        opacity: 0;
+       &:hover {
+         transform: scale(0.9);
+       }
+      }
     }
 
 
@@ -279,6 +297,11 @@
       justify-content: space-around;
 
       .wrapper--other--projet {
+
+        transition: 0.2s;
+       &:hover {
+         transform: scale(0.9);
+       }
         a {
           h1, p {
             text-align: center;

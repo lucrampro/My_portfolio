@@ -44,6 +44,14 @@
     padding: 0px 20px;
     opacity: 0;
 
+    .wrapper--img {
+      transition: 0.2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
     .wrapper--links {
       display: flex;
 
@@ -51,6 +59,11 @@
         margin-left: 10px;
         text-transform: uppercase;
         font-size: 10px;
+        transition: 0.2s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
   }

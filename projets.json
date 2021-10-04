@@ -10,7 +10,8 @@
       "third": "hellomojito/third.jpeg",
       "four": "hellomojito/four.jpeg",
       "five": "hellomojito/five.jpeg"
-    }
+    },
+    "link": "https://hellomojito.com"
   },
   {
     "poster": "signature/poster.jpg",
@@ -24,7 +25,8 @@
       "third": "signature/third.jpg",
       "four": "signature/four.jpg",
       "five": "signature/five.jpg"
-    }
+    },
+    "link": "false"
   },
   {
     "poster": "mixologue/poster.jpeg",
@@ -38,7 +40,8 @@
       "third": "mixologue/third.jpeg",
       "four": "mixologue/four.jpeg",
       "five": "mixologue/five.jpeg"
-    }
+    },
+    "link": "https://le-mixologue.com"
   },
   {
     "poster": "auzen/poster.jpeg",
@@ -52,7 +55,8 @@
       "third": "auzen/third.jpeg",
       "four": "auzen/four.jpeg",
       "five": "auzen/five.jpeg"
-    }
+    },
+    "link": "https://auzen.com"
   },
   {
     "poster": "itq/poster.jpeg",
@@ -66,7 +70,8 @@
       "third": "itq/third.jpeg",
       "four": "itq/four.jpeg",
       "five": "itq/five.jpeg"
-    }
+    },
+    "link": "https://www.itqsecurity.fr/"
   },
   {
     "poster": "xls/poster.jpeg",
@@ -80,6 +85,7 @@
       "third": "xls/third.jpeg",
       "four": "xls/four.jpeg",
       "five": "xls/five.jpeg"
-    }
+    },
+    "link": "https://www.xlsecurity.com/"
   }
 ]
