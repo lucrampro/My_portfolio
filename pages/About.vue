@@ -12,7 +12,7 @@
 
     <div class="wrapper--story">
       <CardInformation v-for="(info, i) in story" :key="i" :infos="info"
-        v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }" />
+        v-intersect="{ callback: onIntersect,options: {threshold: 0.5} }" />
     </div>
     <div class="wrapper--informations" v-intersect="{ callback: onIntersect,options: {threshold: 0.4} }">
       <div class="skilss">
