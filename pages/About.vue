@@ -6,8 +6,7 @@
       <div class="wrapper--img">
         <img :src="require(`~/assets/imgs/about/me.jpg`)" alt="" srcset="">
       </div>
-      <p class="presentation--pitch">Je m'appel <span class="text--bold">RAMASSAMY LUCIEN</span> développeur front end depuis 2ans basé en ile-de-france, j’aime
-        travailler sur des projets creatifs ou des services specifiques utiles.</p>
+      <p class="presentation--pitch">Je m'appelle <span class="text--bold">Lucien Ramassamy</span>, développeur front-end depuis 2 ans. Basé en Ile-de-France, j’aime travailler sur des projets créatifs ou des services spécifiques utiles.</p>
     </div>
 
     <div class="wrapper--story">
@@ -20,6 +19,8 @@
         <ul>
           <li v-for="(skil, i) in infos.skils.skils" :key="i"> {{skil}}</li>
         </ul>
+
+
       </div>
       <div class="awards">
         <p class="title ">{{infos.awards.title}}</p>
