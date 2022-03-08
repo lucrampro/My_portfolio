@@ -6,7 +6,7 @@
       <div class="wrapper--img">
         <img :src="require(`~/assets/imgs/about/me.jpg`)" alt="" srcset="">
       </div>
-      <p class="presentation--pitch">Je m'appelle <span class="text--bold">Lucien Ramassamy</span>, développeur front-end depuis 2 ans. Basé en Ile-de-France, j’aime travailler sur des projets créatifs ou des services spécifiques utiles.</p>
+      <p class="presentation--pitch">Je m'appelle <span class="text--bold">Lucien Ramassamy</span>, développeur front-end depuis 3 ans. Basé en Ile-de-France, j’aime travailler sur des projets créatifs ou des services spécifiques utiles.</p>
     </div>
 
     <div class="wrapper--story">
@@ -65,7 +65,16 @@
       return {
         story: [{
           title: 'Experience',
-          content: [{
+          content: [
+            {
+              title: 'Developpeur front end - BlackSwan 2022 (actuellement)',
+              content: 'En mission freelance j\'integre BlackSwan agence web proposant des services de sites e-commerce Shopify pour renforcer l\'equipe front dans le cadre d\'un besoin de plusieurs mois.'
+            },
+            {
+              title: 'Formateur javascript - Wildcodeschool 2021',
+              content: 'En mission freelance de 3 mois dans une formation en part-time j\'ai encadré une session de cours du soir dans le cadre d\'une decouverte du developpement web.'
+            },
+            {
               title: 'Developpeur front end - Hellomojito 2019-2021',
               content: 'En poste 2 ans au sein de l’agence Hellomojito j’ai participer au developpement de la partie front end des projets, cette experiences ma beaucoup apporté et ma permis de developper de superbe projets.'
             },
@@ -90,7 +99,7 @@
           skils: {
             title: 'competences',
             skils: [
-              'html', 'css', 'javascript', 'vueJS', 'NuxtJs', 'ReactJs', 'React native', 'GSAP', 'GIT', 'SHELL'
+              'html', 'css', 'javascript', 'typescript', 'vueJS', 'NuxtJs', 'ReactJs', 'React native', 'shopify', 'GSAP', 'GIT', 'SHELL'
             ]
           },
           awards: {
