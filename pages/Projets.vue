@@ -147,8 +147,7 @@
 
           @media screen and (min-width: $laptop) {
             margin-top: 20px;
-            text-align: left;
-            font-size: 60px;
+            font-size: 40px;
           }
         }
       }

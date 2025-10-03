@@ -1,12 +1,14 @@
 <template>
   <div class="about">
     <div class="wrapper--presentation">
-      <Title title="Creative" />
-      <Title title="Developpeur" />
+      <Title title="Software" />
+      <Title title="Engineer" />
       <div class="wrapper--img">
         <img :src="require(`~/assets/imgs/about/me.jpg`)" alt="" srcset="">
       </div>
-      <p class="presentation--pitch">Je m'appelle <span class="text--bold">Lucien Ramassamy</span>, développeur front-end depuis 3 ans. Basé en Ile-de-France, j’aime travailler sur des projets créatifs ou des services spécifiques utiles.</p>
+      <p class="presentation--pitch"> <span class="text--bold spacing-2">Lucien Francois RAMASSAMY</span>, Développeur Frontend confirmé avec ~4 ans d’expérience, spécialisé en Vue.js (v2 & v3), TypeScript, tests (Jest, Cypress). J’ai travaillé sur des projets grands publics à forte fréquentation (laposte.fr), ainsi que sur des applications innovantes (Web3, NFTs).
+        Je suis tourné vers la qualité : accessibilité, code maintenable, refactorisation, documentation, performance.
+      </p>
     </div>
 
     <div class="wrapper--story">
@@ -31,20 +33,8 @@
       </div>
     </div>
 
-    <!-- YOUTUBE INFOS HERE  -->
-    <div class="wrapper--youtube" v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }">
-
-      <Title title="Youtube" />
-      <p>Je tiens sur mon temps personmnelles une chaine youtube <br>
-        <a target="blank" href="https://www.youtube.com/channel/UCSSPbD8TwQEzQWei4EVGCgA" class="text--bold">CODE AVEC
-          LECHAT</a> ou je publies des tutoriels, conseils et avis sur le theme du
-        developpement web.</p>
-    </div>
-    <!-- YOUTUBE INFOS HERE  -->
     <div class="wrapper--contact" v-intersect="{ callback: onIntersect,options: {threshold: 0.3} }">
-
-
-      <a href="mailto:toto@toto.com">
+      <a href="mailto:lfrentreprise.contact@gmail.com" target="_blank" >
         <!-- <h1>envie de collaborer avec moi ? n’hesitez pas a me contacter</h1> -->
         <Words class="wrapper--words" Text="envie de collaborer avec moi ? Cliquez pour me contacter" />
       </a>
@@ -67,31 +57,35 @@
           title: 'Experience',
           content: [
             {
-              title: 'Developpeur front end - BlackSwan 2022 (actuellement)',
+              title: 'Developpeur Développeur Frontend – La Poste - 2022 / 2025 (En poste actuellement) ',
+              content: 'En mission freelance j\'integre Laposte pour participer au developpement de la partie front end de leurs paltforme.'
+            },
+            {
+              title: 'Intervenant JavaScript – HETIC - 2023/2024',
+              content: 'En parallèle de mes missions, j’anime des cours de JavaScript pour les étudiants de première année à HETIC.'
+            },
+            {
+              title: 'Développeur Frontend – The Aquaverse - 2022',
+              content: 'Mission freelance pour The Aquaverse, startup spécialisée dans la blockchain et les NFT, j’ai participé au développement de la partie front end de leur plateforme web3.'
+            },
+            {
+              title: 'Développeur Frontend – BlackSwan - 2021/2022',
               content: 'En mission freelance j\'integre BlackSwan agence web proposant des services de sites e-commerce Shopify pour renforcer l\'equipe front dans le cadre d\'un besoin de plusieurs mois.'
             },
             {
               title: 'Formateur javascript - Wildcodeschool 2021',
-              content: 'En mission freelance de 3 mois dans une formation en part-time j\'ai encadré une session de cours du soir dans le cadre d\'une decouverte du developpement web.'
+              content: 'Encadrement d’une promotion en cours du soir part-time sur la découverte du développement web.'
             },
             {
-              title: 'Developpeur front end - Hellomojito 2019-2021',
-              content: 'En poste 2 ans au sein de l’agence Hellomojito j’ai participer au developpement de la partie front end des projets, cette experiences ma beaucoup apporté et ma permis de developper de superbe projets.'
-            },
-            {
-              title: 'Integrateur - Polkatulk 2018',
-              content: 'En poste 3 mois cette éxperience qui fut la premières ma permis de decouvrir le monde de l\'entreprise.'
+              title: 'Développeur Frontend – Hellomojito - 2019/2021',
+              content: 'Deux années au sein de l’agence digitale Hellomojito en tant que développeur frontend.'
             }
           ]
         }, {
           title: 'Education',
           content: [{
               title: 'HETIC - Bachelor Developpeur web',
-              content: 'Diplome de niveau bac + 3 « Developpeur web » au sein de l’etablissement HETIC, formation en 3 ans en alternance propose un programme solide coherent avec les technologies actuel du marché.'
-            },
-            {
-              title: 'IESA - Bachelor chef de projet multimedia',
-              content: 'Diplome de niveau bac + 3 « Chef de projet Multimedia » au sein de l’etablissement IESA Multimedia, formation en 3 ans en alternances propose un programme solide pour former des chefs de projets competents.'
+              content: 'Diplome de niveau bac + 3 « Concepteur développeur de solutions digitales » au sein de l’etablissement HETIC, formation de 3 ans en alternance qui propose un programme solide et cohérent avec les technologies actuel du marché.'
             }
           ]
         }],
@@ -99,17 +93,26 @@
           skils: {
             title: 'competences',
             skils: [
-              'html', 'css', 'javascript', 'typescript', 'vueJS', 'NuxtJs', 'ReactJs', 'React native', 'shopify', 'GSAP', 'GIT', 'SHELL'
+              'TypeScript', 'Vue.js', 'Vue 2', 'Vue 3', 'Nuxt.js', 'React.js', 'React Native', 'Storybook', 'GSAP', 'Jest', 'Git', 'GitLab', 'CI/CD', 'Agile/Scrum', 'Shell'
+
             ]
           },
           awards: {
-            title: 'recompences',
+            title: 'récompences',
             awards: [{
-                platform: 'awwards - honorable mentions',
+                platform: 'Awwwards - Honorable mentions',
                 site: 'www.hellomojito.com'
               },
               {
-                platform: 'CSS design awards - site of the day',
+                platform: 'Awwwards - Mobile Excellence',
+                site: 'www.hellomojito.com'
+              },
+              {
+                platform: 'CSS design awards - Site of the day',
+                site: 'www.hellomojito.com'
+              },
+              {
+                platform: 'Orpetron - Site of the day',
                 site: 'www.hellomojito.com'
               }
             ]
@@ -282,12 +285,10 @@
       }
 
       .presentation--pitch {
-        text-align: justify;
+        text-align: left;
         font-weight: bold;
         margin: 20px;
-        @media screen and (min-width: $laptop) {
-          text-align: left;
-        }
+        line-height: 30px;
       }
     }
 
@@ -386,7 +387,6 @@
 
         @media screen and (min-width: $laptop) {
           margin: 30px 0px;
-          text-align: left;
         }
 
         span {
@@ -439,6 +439,10 @@
       text-align: center;
       text-transform: uppercase;
       margin: 30px 0px;
+    }
+
+    .spacing-2 {
+      letter-spacing: 2px!important;
     }
   }
 </style>

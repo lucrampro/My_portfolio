@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="wrapper--infos">
-      <p class="technos">{{ projects_info[project_number].techno }}</p>
+      <!-- <p class="technos">{{ projects_info[project_number].techno }}</p> -->
       <!-- <h1>{{ projects_info[project_number].title }}</h1> -->
       <Title :title="projects_info[project_number].title" />
     </div>
@@ -157,7 +157,7 @@
             opacity: 1,
             y: '0px'
           }, 'ssecond')
-          .add(() => this.animeTitleToBottom())
+          .add(() => this.animeTitleToBottom(), 'second+=1')
           .to('.technos', {
             duration: duration,
             opacity: 1,
@@ -174,7 +174,7 @@
           }, 'second+=1')
       },
       animeTitleToTop() {
-        const duration = 1;
+        const duration = 2;
         gsap.timeline().to('.title--composant span', {
           duration: duration,
           stagger: 0.02,
@@ -185,7 +185,7 @@
         })
       },
       animeTitleToBottom() {
-        const duration = 0.8
+        const duration = 1
         gsap.timeline()
           .set('.title--composant span', {
             skewX: '60deg',

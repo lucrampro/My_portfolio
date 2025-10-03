@@ -4,14 +4,15 @@
       <Home v-if="$store.state.loading" />
       <div class="loading--overlay" v-else>
         <Title title="Chargement..." />
-          <Title title="Developpeur" />
-
+        
         <div class="wrapper--title">
+          <Title title="Developpeur" />
           <Title title="Disponible" />
           <Title title="pour" />
           <Title title="des" />
           <Title title="missions" />
           <Title title="freelance" />
+          <Title title="500EU - TJM" />
         </div>
       </div>
     </div>
