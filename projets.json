@@ -1,6 +1,6 @@
 [
   {
-    "poster": "laposte/laposte_poster_5.jpg",
+    "poster": "laposte/poster.png",
     "title": "Laposte.fr",
     "techno": "Client grand compte",
     "description": "Le site laposte.fr, utilisé quotidiennement par des millions d’utilisateurs, nécessitait une modernisation front-end pour offrir une meilleure expérience utilisateur et garantir une cohérence technique et visuelle sur l’ensemble de la plateforme.",
@@ -15,7 +15,7 @@
     "link": "https://laposte.fr"
   },
   {
-    "poster": "aquaverse/the_aquaverse_background.jpg",
+    "poster": "aquaverse/poster.jpg",
     "title": "Aquaverse",
     "techno": "Startup Web 3",
     "description": "Aquaverse.io est une startup Web3 spécialisée dans les NFT et l’univers digital des objets de collection. L’objectif était de développer une plateforme accessible et intuitive permettant aux utilisateurs d’interagir avec des NFTs (création, gestion, achat/vente).",
