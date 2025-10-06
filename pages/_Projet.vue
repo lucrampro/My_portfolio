@@ -143,7 +143,6 @@
       getProjet() {
         for (const [index, projet] of this.projects_info.entries()) {
           // projet.title === this.$route.params.Projet ? () => { this.projet = projet; this.number_projet = index } : '';
-          console.log(this.$route)
           
           if (projet.title === this.$route.params.projet) {
             this.projet = projet;
