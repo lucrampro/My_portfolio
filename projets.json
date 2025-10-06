@@ -1,7 +1,7 @@
 [
   {
     "poster": "laposte/poster.png",
-    "title": "Laposte.fr",
+    "title": "Laposte",
     "techno": "Client grand compte",
     "description": "Le site laposte.fr, utilisé quotidiennement par des millions d’utilisateurs, nécessitait une modernisation front-end pour offrir une meilleure expérience utilisateur et garantir une cohérence technique et visuelle sur l’ensemble de la plateforme.",
     "participation": "Développement du site laposte.fr en Vue.js 3 + TypeScript. Conception et évolution d’un Design System interne via Storybook, avec des composants réutilisables et documentés.Intégration d’interfaces complexes (authentification, suivi colis, services en ligne).Contribution aux bonnes pratiques de performance web et d’accessibilité (WCAG 2.1).Collaboration en équipe agile avec PO, UX/UI designers et développeurs backend.",

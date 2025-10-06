@@ -148,7 +148,12 @@
           if (projet.title === this.$route.params.projet) {
             this.projet = projet;
             this.number_projet = index;
-          }
+          } 
+
+          if (projet.title === this.$route.params.Projet) {
+            this.projet = projet;
+            this.number_projet = index;
+          } 
         }
       },
 
