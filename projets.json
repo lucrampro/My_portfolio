@@ -2,7 +2,7 @@
   {
     "poster": "laposte/poster.png",
     "title": "Laposte",
-    "techno": "Client grand compte",
+    "techno": "Vue.js, Nuxt.js, React.js, TypeScript, Storybook, git, CI/CD, Agile/Scrum",
     "description": "Le site laposte.fr, utilisé quotidiennement par des millions d’utilisateurs, nécessitait une modernisation front-end pour offrir une meilleure expérience utilisateur et garantir une cohérence technique et visuelle sur l’ensemble de la plateforme.",
     "participation": "Développement du site laposte.fr en Vue.js 3 + TypeScript. Conception et évolution d’un Design System interne via Storybook, avec des composants réutilisables et documentés.Intégration d’interfaces complexes (authentification, suivi colis, services en ligne).Contribution aux bonnes pratiques de performance web et d’accessibilité (WCAG 2.1).Collaboration en équipe agile avec PO, UX/UI designers et développeurs backend.",
     "project_img": {
@@ -17,7 +17,7 @@
   {
     "poster": "aquaverse/poster.jpg",
     "title": "Aquaverse",
-    "techno": "Startup Web 3",
+    "techno": "Vue.js, Nuxt.js, TypeScript, Storybook, git, CI/CD, Agile/Scrum",
     "description": "Aquaverse.io est une startup Web3 spécialisée dans les NFT et l’univers digital des objets de collection. L’objectif était de développer une plateforme accessible et intuitive permettant aux utilisateurs d’interagir avec des NFTs (création, gestion, achat/vente).",
     "participation": "Développement de la plateforme en Vue.js 3 + Nuxt.js + TypeScript. Intégration avec des API blockchain (Web3.js, smart contracts) pour la gestion des NFTs. Création d’interfaces interactives pour la visualisation et la gestion de collections digitales. Optimisation de l’expérience utilisateur (UX/UI responsive, navigation fluide). Mise en place de bonnes pratiques de structuration et de tests pour garantir la stabilité de l’app.",
     "project_img": {
@@ -32,7 +32,7 @@
   {
     "poster": "hellomojito/poster.jpg",
     "title": "hellomojito",
-    "techno": "Agence web",
+    "techno": "Vue.js, Nuxt.js, TypeScript, git",
     "description": "Hellomojito est le portfolio de l'agenceHellomojito dans la quel j'ai etait en poste.",
     "participation": "Developpement VueJS, integrations, animations.",
     "project_img": {
@@ -62,7 +62,7 @@
   {
     "poster": "mixologue/poster.jpeg",
     "title": "mixologue",
-    "techno": "Agence wub",
+    "techno": "Vue.js, Nuxt.js, TypeScript, git",
     "description": "Le Mixologue est un vendeur de e-liquid pour cigarettes electronique.",
     "participation": "Developpement VueJS, Update du projet, utilisation du store",
     "project_img": {
@@ -77,7 +77,7 @@
   {
     "poster": "auzen/poster.jpeg",
     "title": "auzen",
-    "techno": "Agence web",
+    "techno": "Vue.js, Nuxt.js, TypeScript, git",
     "description": "Auzen révolutionne l’accès aux soins auditifs en offrant un service premium inédit: l'accès en ligne à une grande variété d'aides auditives de pointe, à un prix juste et transparent.",
     "participation": "Developpement javascript, integration, animation.",
     "project_img": {
@@ -92,7 +92,7 @@
   {
     "poster": "itq/poster.jpeg",
     "title": "itq",
-    "techno": "Agence web",
+    "techno": "Vue.js, Nuxt.js, TypeScript, git",
     "description": "ITQ Security est un acteur majeur de la sécurité électronique, Spécialisé dans les technologies de sécurité électronique détection intrusion, vidéo surveillance, contrôle d’accès, détection incendie….",
     "participation": "Integration WORDPRESS, developpement javascript, animation.",
     "project_img": {
@@ -107,7 +107,7 @@
   {
     "poster": "xls/poster.jpeg",
     "title": "xls",
-    "techno": "Agence web",
+    "techno": "Vue.js, Nuxt.js, TypeScript, git",
     "description": "Expert de la sécurité antivol, Spécialisée dans la surveillance électronique des articles en magasin, la société XL Security a conçu et réalisé une large gamme de solutions.",
     "participation": "Developpement javascript, integration, animation.",
     "project_img": {
